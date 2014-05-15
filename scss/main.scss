@@ -1,0 +1,601 @@
+@import 'vars';
+@import 'fonts';
+@import 'mixins';
+
+
+@-webkit-keyframes come-in {
+  to { -webkit-transform: translateY(0); }
+}
+@keyframes come-in {
+  to { transform: translateY(0); }
+}
+*{
+	-webkit-box-sizing:border-box;
+	margin: 0;
+	padding:0;
+}
+::-webkit-input-placeholder {
+   color: white;
+   font-family: 'brandon-grotesque';
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: white;  
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: white;  
+}
+
+:-ms-input-placeholder {  
+   color: white;  
+}
+
+body{
+	font-family: 'brandon-grotesque', arial, helvetica, sans-serif;
+	font-size: 62.5%;
+	font-weight: 300;
+	min-width: 320px;
+}
+html.touch{
+	
+	body{
+		overflow-y:scroll;
+		-webkit-overflow-scrolling: touch;
+	}
+	#wrapper{
+		position: absolute;
+		top:0;
+		bottom:0;
+		left:0;
+		right: 0;
+		overflow-y:scroll;
+		@include breakpoint(mobile){
+			-webkit-overflow-scrolling: touch;
+		}
+		@include breakpoint(large-phone){
+			-webkit-overflow-scrolling: touch;
+		}
+	
+	}
+}
+
+html.touch 
+li{
+	list-style-type: none;
+}
+a{
+	color: white;
+	text-decoration: none;
+	font-size: 1.2em;
+	
+	&.active{
+		color: $yellowMustard;
+	}
+}
+p, li{
+	font-size: 1.4em;
+	margin: 0;
+	padding: 0;
+}
+img{
+	display: block;
+	max-width: 100%;
+}
+h2{
+	
+	width: 100%;
+	text-align:center;
+	margin-top: 50px;
+	font-size: 5em;
+	color:white;
+	margin-bottom: 0;
+	@include breakpoint(mobile) {
+		font-size: 2em;
+		margin-top: 20px;
+		display: none;
+	}
+	@include breakpoint(large-phone) {
+		font-size: 2em;
+		margin-top: 20px;
+		display: none;
+	}
+}
+.icon{
+	font-family: 'icomoon';
+	font-weight: 100;
+	font-size: 1.2em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	
+}
+header{
+	
+	position: absolute;
+	right: 5%;
+	top:93%;
+	height: 50px;
+	left: 0;
+	right: 0;
+	@include breakpoint(mobile) {
+		position: fixed;
+
+		top:0;
+		&.stick{
+			position: fixed;
+			top:0;
+		}
+	}
+	@include breakpoint(large-phone) {
+		position: fixed;
+		bottom:0;
+		&.stick{
+			position: fixed;
+			bottom:0;
+		}
+	}
+	&.stick{
+		position: fixed;
+		top:0px;
+		right: 0px;
+		left:0;
+		left: 0;
+		//background: transparentize($portfolioColor, 0.5);
+
+	}
+	nav{
+		
+		text-align: right;
+		color:white;
+		height: 100%;
+		padding-right: 5%;
+		line-height: 50px;
+		a{
+			
+			font-size: 1.5em;
+			padding-right: 10px;
+			padding-left: 10px;
+			
+			&:last-child{
+				border-right: none;
+			}
+		}
+		@include breakpoint(mobile){
+			text-align: center;
+		}
+	}
+	h1{
+		
+		color:white;
+		font-weight: 100;
+		a{
+			font-size: 1em;
+		}
+		span{
+			
+			font-size: .75em;
+			margin-left: 10px;
+		}
+	}
+}
+.bg{
+	position: absolute;
+	right: 0;
+	left: 0;
+	background-color: $aboutColor;
+	height: 100%;
+	-webkit-transition: all 1s ease;
+	overflow: hidden;
+	.content{
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+
+#about{
+	top:0;
+	bottom:0;
+	padding-top: 80px;
+	background-color: $aboutColor;
+
+	h3{
+		text-align: left;
+		color:white;
+		margin-top: 0;
+		padding-top: 0;
+		font-size: 3.6em;
+		font-weight: normal;
+		padding-left: 2%;
+		padding-right: 2%;
+		width: 70%;
+	}
+	h1{
+		color:white;
+		width: 70%;
+		margin: 0 auto;
+		span{
+			display: block;
+			font-weight: 100;
+		}
+		@include breakpoint(mobile){
+			font-size: 1.5em;
+			//width: 90%;
+		}
+		@include breakpoint(large-phone){
+			font-size: 1.2em;
+			//width: 90%;
+		}
+	}
+	
+	.introduction{
+		text-align: left;
+		font-size: 2.8em;
+		color:white;
+		width: 70%;
+		margin: 0 auto;
+		.def{
+			position: relative;
+			&:hover{
+				cursor: context-menu;
+				&:after{
+					content:'Cat Lover';
+					font-size: 0.5em;
+					position: absolute;
+					width: 160px;
+					padding-left:10px;
+					height:30px;
+					background: $portfolioColor;
+				}
+			}
+		}
+		&.scroll-signifier{
+			margin: 0 auto;
+			text-align: center;
+			position: fixed;
+			bottom:20%;
+			width: 100%;
+			font-size: 1.2em;
+			.icon{
+				display: block;
+			}
+		}
+		&.hidden{
+			display: none;
+		}
+		@include breakpoint(mobile){
+			font-size: 1.5em;
+			width: 90%;
+		}
+		@include breakpoint(large-phone){
+			font-size: 1.2em;
+			width: 90%;
+		}
+	}
+	@include breakpoint(mobile) {
+		
+		//width: 90%;
+		padding-top: 20px;
+	}
+	@include breakpoint(large-phone) {
+	
+		//width: 90%;
+		padding-top: 20px;
+	}
+}
+#portfolio{
+	top:100%;
+	background-color: $portfolioColor;
+	.close{
+		position: absolute;
+		display: block;
+		right: 3%;
+		top:80px;
+		z-index: 1;
+		height: 44px;
+		width: 44px;
+		text-align: center;
+		line-height: 44px;
+		display: none;
+		font-weight: 500;
+	}
+	.galleryList{
+	
+		margin: 0px auto 0 auto;
+		height: 100%;
+		min-height: 700px;
+		padding-top: 0px;
+		padding-left: 25px;
+		padding-right: 25px;
+		position: relative;
+		
+		
+		.come-in {
+		  -webkit-transform: translateY(150px);
+		  -webkit-animation: come-in 2s ease forwards;
+		}
+		@include breakpoint(mobile) {
+			width: 100%;
+			padding:0;
+		}
+		li{
+			position: absolute;
+			display: block;
+			overflow: hidden;
+			height: 300px;
+			list-style-type: none;
+			width: 30%;
+			-webkit-transition: all .7s ease;
+		 			transition: all .7s ease;
+			background: black;
+		 	.info{
+		 		font-size: 1.2em;
+		 		display: none;
+		 	}
+		 	img{
+		 		max-width: 100%;
+		 		-webkit-transition: all 1s ease;
+		 				transition: all 1s ease;		  
+		 	}
+		 	&:hover{
+				cursor:pointer;
+				img{
+					-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+					filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+					opacity: 0.5;
+				}
+			}
+			&.selected{
+				background: white;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				right: 0px;
+				bottom:0px;
+				width: 100%;
+				height: 700px;
+				background-color: $portfolioColor;
+				z-index: 1;
+				
+				img{
+					
+					-webkit-transition: all .5s ease;
+		 					transition: all .5s ease;
+
+					width: percentage(800px/ 1440px);
+					margin:60px auto auto 30px;
+
+					-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+					filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+					opacity: 1;		  
+				}
+				&:hover{
+					cursor:auto;
+				}
+				.info{
+			 		display: block;
+			 		width: 32%;
+			 		position: absolute;
+			 		top:45px;
+			 		left: 60%;
+			 		color:white;
+			 		-webkit-transition: all 1s ease;
+			 		
+			 		dt{
+			 			font-weight: 700;
+			 			border-bottom: 1px solid darken($portfolioColor, 0.6%);
+			 			background-color: lighten($portfolioColor, 0.6%);
+			 			padding:3px;
+			 			color: lighten($portfolioColor, 15%);
+			 		}
+			 		dd{
+						margin-left: 0;
+						margin-top: 5px;
+						margin-bottom: 5px;
+			 		}
+				 	@include breakpoint(mobile) {
+				 		left: 0%;
+				 		top:60%;
+				 	}
+				 	@include breakpoint(large-phone) {
+				 		left: 30px;
+				 		top:60%;
+				 	}
+			 	}
+			}
+
+		}
+		@for $i from 0 through 3 {
+	
+		    $val:  $i  * 450px + 40px;
+		    $value: percentage($val / 1440px);
+		    li:nth-child(#{$i+1}){
+		    	left:  $value;
+		    	top:50px;
+		    	overflow: hidden;
+		    	&.selected{
+		    		left:0;
+		    		top:0;	
+		    	}
+		    }
+		}
+		$num: 0;
+		@for $b from 4 through 6 {
+			
+		    $val:  $num  * 450px + 40px;
+		    $num: $num +1;
+		    $value: percentage($val / 1440px);
+		    li:nth-child(#{$b}){
+		    	left:  $value;
+		    	top: 370px;
+		    	margin-right: 20px;
+		    	overflow: hidden;
+		    	&.selected{
+		    		top:0;
+		    		left:0;
+		    	}			
+		    }
+		}
+		@include breakpoint(mobile) {
+
+			@include respondGallery(mobile);
+		}
+		@include breakpoint(large-phone) {
+			@include respondGallery(large-phone);
+		}
+	}
+}
+#faq{
+	top:200%;
+	background-color: $faqColor;
+	article{
+		font-size: 1em;
+		&:hover{
+			background-color: darken($faqColor, 5%);
+		}
+		color: $portfolioColor;
+	}
+	h3{
+		color: $portfolioColor;
+		font-size: 1.8em;
+	}
+
+}
+#contact{
+	// top:300%;
+	top: 200%;
+	background-color: $contactColor;
+	
+	form{
+		width: 60%;
+		margin: 25px auto 0 auto;
+		p{
+			margin-top: 15px;
+		}
+		label{
+			width: 30%;
+			display: inline-block;
+			text-align: right;
+			font-weight: 500;
+			font-size: 1.6em;
+			margin-right: 1%;
+			color: darken($contactColor, 20%);
+		}
+		input, textarea{
+			-webkit-appearance: none;
+			border:none;
+			height: 30px;
+			padding:5px;
+			width: 40%;
+			background: lighten($contactColor , 10%);
+			border-radius: 5px;
+			color:white;
+		}
+		input[type="submit"]{
+			height: 40px;
+		}
+		textarea{
+			resize:none;
+			height: 200px;
+			width: 40%;
+
+		}
+		input[type="submit"]{
+			background-color: hsla(184, 29%, 51%, 1.0);
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+	}
+	form{
+		@include breakpoint(tablet) {
+			width: 80%;
+			margin: 20px auto 0 auto;
+		}
+		@include breakpoint(mobile) {
+			width: 95%;
+			border: 1px solid #000;
+			label, input, textarea{
+				width:100%;
+				
+				margin-right: 0;
+			}
+			label{
+				text-align: left;
+				font-size: 1em;
+			}
+			textarea{
+				height: 100px;
+			}
+		}
+		@include breakpoint(large-phone) {
+			width: 95%;
+			border: 1px solid blue;
+			label, input, textarea{
+				width:100%;
+
+			}
+			label{
+				text-align: left;
+			}
+		}
+	}
+}
+
+.come-in {
+  -webkit-transform: translateY(150px);
+  -webkit-animation: come-in 2s ease forwards;
+}
+.come-in:nth-child(odd) {
+  -webkit-animation-duration: 1s;
+}
+.already-visible {
+  -webkit-transform: translateY(0);
+  -webkit-animation: none;
+}
+#sm{
+	
+	
+	text-align: center;
+	width: 5%;
+	
+	li{
+		padding-top: 5px;
+		min-width: 44px;
+		height: 44px;
+		
+		a{
+			text-align: center;
+			display: block;
+			width: 100%;
+			font-size: 1.5em;
+			line-height: 44px;
+		}	
+	
+		@include breakpoint(mobile) {
+			display: inline-block;
+			margin-top: 25% auto 0 auto;
+
+			
+		}
+		@include breakpoint(large-phone) {
+			display: inline-block;
+			margin-top: 25% auto 0 auto;
+			
+		}
+	}
+	&.hidden{
+		display: none;
+	}
+	@include breakpoint(mobile) {
+		
+		width: 90%;
+			
+	}
+	@include breakpoint(large-phone) {
+		
+		width: 90%;
+		
+	}
+}
+
+
+

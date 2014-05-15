@@ -1,0 +1,125 @@
+@mixin addShadow(){
+ 	-moz-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+  -webkit-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+  box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
+}
+@mixin breakpoint($point) {
+	@if $point == mobile {
+		@media screen and (max-width : 479px) {  @content; }
+	}
+	@else if $point == large-phone {
+		@media screen and (min-width : 480px) and (max-width : 767px) { @content; }
+	}
+	@else if $point == tablet {
+		@media screen and (min-width : 768px) and (max-width : 959px) { @content; }
+	}
+	@else if $point == browser {
+		@media screen and (min-width : 960px) and (max-width: 1199px) { @content; }
+	}
+	@else if $point == large-browser {
+		@media screen and (min-width : 1200px) { @content; }
+	}
+}
+$devices: mobile 240px 479px 0px, large-phone 383px 767px 30px, tablet 400px 959px 50px;
+@mixin respondGallery($d) {
+			@each $device in $devices{
+				@if nth($device, 1) == $d {
+					$itempxwidth : nth($device, 2);
+					
+					$margin : percentage(10px/nth($device, 3));
+					$itemWidth: percentage($itempxwidth/ nth($device, 3));
+					//$margin : percentage(10px/nth($device, 3));
+					$itemHeight: $itempxwidth / 1.6 - nth($device, 4);
+					$i:0;
+					@for $i from 0 through 2 {
+						$val:  $i * $itemWidth;
+					    $value: $val;
+					    li:nth-child(#{$i+1}){
+					    	left:  $value;
+					    	top:50px;
+					    	width: $itemWidth;
+					    	max-width: $itempxwidth;
+					    	height: $itemHeight;
+					    	overflow: hidden;
+
+							&:nth-child(even){
+								margin-left: 0;//$margin+1;
+					    	}
+					    	&.selected{
+					    		position: absolute;
+					    		left:0;
+					    		top:0;
+					    		right: 0;
+					    		bottom:0;
+					    		height: 100%;	
+					    		width: 100%;
+					    		z-index: 5;
+					    	}
+					    }
+					}
+					$num: 0;
+					@for $b from 3 through 4 {
+						
+					    
+					    $val:  $num  * $itemWidth;
+					    $num: $num +1;
+					    $value: $val;
+					    li:nth-child(#{$b}){
+					    	width: $itemWidth;
+					    	//max-width: $itempxwidth;
+					    	height: $itemHeight;
+					    	left:  $value;
+					    	top: $itemHeight + 50px;
+					    	margin-right: 0;//$margin;
+					    	overflow: hidden;
+							&:nth-child(even){
+								//margin-left: $margin+1;
+
+					    	}
+					    	&.selected{
+					    		position: absolute;
+					    		top:0;
+					    		left:0;
+					    		bottom:0;
+					    		right: 0;
+					    		width: 100%;
+					    		height: 100%;
+
+					    	}
+					    	// border: 1px solid white;
+					    }
+					}
+					$num: 0;
+					@for $b from 5 through 6 {
+						
+					    $val:  $num  * $itemWidth;
+					    $num: $num +1;
+					    $value: $val;
+					    li:nth-child(#{$b}){
+					    	left:  $value;
+					    	top: (2 * $itemHeight ) + 50px;
+					    	width: $itemWidth;
+					    	max-width: $itempxwidth ;
+					    	height: $itemHeight;
+					    	//margin-right: $margin;
+					    	overflow: hidden;
+					    	margin: 0;
+					    	&:nth-child(even){
+								margin-left: 0;
+
+		    				}
+					    	&.selected{
+					    		position: absolute;
+					    		top:0px;
+					    		left:0px;
+					    		bottom:0px;
+					    		right: 0px;
+					    		width: 100%;
+					    		height: 100%;
+					    		border: 1px solid white;
+					    	}			
+					    }
+					}
+				}
+			}
+		}

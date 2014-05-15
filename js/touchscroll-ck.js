@@ -1,0 +1,1 @@
+Modrnizer.touch?alert("touchy"):console.log("touchy");
