@@ -14,8 +14,12 @@
         <script type="text/javascript" src="//use.typekit.net/hqi4ibq.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
+
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
         <script src="js/vendor/jquery-1.11.0.min.js"></script>
+        <script src="js/vendor/handlebars.runtime-v1.3.0.js"></script>
+        <script src="js/templates.js"></script>
+
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
          <!--CDN links for the latest TweenLite, CSSPlugin, and EasePack-->
@@ -47,7 +51,7 @@
         <section class="bg" id="portfolio">  
             <ul id="gallery" class="galleryList">
                 <li>
-                    <div class="contain">
+                    <div class="contain" data-name="allAboutDesign">
                         <img data-title="All About design" src="img/allaboutdesign_industry800x600.jpg">
                         <div class="info">
                             <dl>
@@ -74,7 +78,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="contain">
+                    <div class="contain" data-name="fock">
                         <img data-title="Smart Cycle Tracker" src="img/sct-redesigned.png">
                         <div class="info">
                             <dl>

@@ -61,7 +61,6 @@ var animateTo = function(currSection){
 	});
 
 	tl.to( window, 1, { scrollTo:{y:currSection.offset().top}, ease:Power2.easeOut});
-	//console.log(currSection.css('background-color')
 
 }
 var updateNav = function(section){
@@ -100,6 +99,10 @@ var handleScrolling = function () {
 	});
 }
 var init = function(){
+	$.getJSON('http://localhost/14Personal/scrolling/json/data.json', function(data){
+		port = data;
+	});
+
 	Modernizr.load({  
 	    test: Modernizr.touch,  
 	    yep : 'touchscroll.js',  
@@ -148,6 +151,7 @@ var setItemGalleryHeight = function() {
 $(document).ready(function() {
 
 	init();
+	console.log()
 
 	navLink.on('click', function (e){
 		id = $(e.currentTarget).data('scroll');
@@ -192,6 +196,14 @@ $(document).ready(function() {
 			height:selLi.height()
 		});
 		$(portfolio).append(clone);
+
+		var selected = $(e.currentTarget).find('.contain').data('name');
+		var data = port[selected];
+
+		console.log(data);
+
+		// $('body').html(raco.selectedWork(port[]));
+		
 		setTimeout(function() {
 			$(clone).addClass('full');
 
@@ -199,12 +211,8 @@ $(document).ready(function() {
 				$('.clone').find('img').css('opacity', 1);
 			}, 10);
 		}, 10);
-		//var bob = $(e.target).closest('li').find('.info');
-		//TweenLite.kill();
-		//TweenLite.set(info, 1.25, { top:0, left:60+"%" });
-		// TweenLite.to(clone, 0, { top: 0, left:0});
-		// selLi.off('mouseleave').off('mouseenter')
-		 closeLink.show();
+		
+		closeLink.show();
 		return false;
 	});
 	closeLink.on('click', function (e) {
@@ -231,7 +239,6 @@ $(document).ready(function() {
 		
 		if($(window).scrollTop() > $('nav').offset().top || $(window).scrollTop() <  getInnerHeight() - header.height() ){
 		
-			//resetNavPosition();
 			stickyNav();
 			handleScrolling();
 			updateNav(getCurrentSection());
