@@ -1,1 +1,44 @@
-{{data}}
+
+<figure id="imgFull">
+    {{#each this.images}}
+        <img src="img/{{image}}" alt=""/>
+    {{/each}}
+    {{#if caption}}
+         <figcaption>{{caption}}</figcaption>
+    {{/if}}
+   
+</figure>
+
+<div class="expanded-info">
+<dl>
+    <dt>Category</dt>
+    <dd><span class="icon">&#xe002;</span> {{this.category}}</dd>
+    <dd>{{this.platform}}</dd> 
+
+    <dt>Project Name</dt>
+    <dd>{{this.name}}</dd>       
+    
+    <dt>Skills</dt>
+    {{#each this.skills}}
+         <dd>{{skill}}</dd>
+    {{/each}}
+    
+    
+    <dt>Roles</dt>
+    {{#each this.role}}
+         <dd>{{role}}</dd>
+    {{/each}}
+
+    <dt>Team</dt>
+    {{#each this.team}}
+         <dd>{{member}} - <em>{{role}}</em></dd>
+        
+    {{/each}}
+
+    <dt>Year</dt>
+    <dd>{{this.year}}</dd>
+
+    <dt>Description</dt>
+    <dd>{{this.description}}</dd>
+</dl>
+</div>

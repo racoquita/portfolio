@@ -1,10 +1,253 @@
 {
 	"allAboutDesign": {
 		"name": "All About Design",
-        "type": "web"
+        "category": "Web",
+        "platform": "Web",
+        "link": "#",
+        "description": "This is a ficticious site allaboutdesign.com where users can find up-to-date industry information and resources. ",
+        "skills": [
+            {
+            	"skill": "Web Design"
+            },
+            {
+            	"skill": "XHTML"
+            },
+            {
+            	"skill": "Web Standards"
+            },
+            {
+            	"skill": "CSS 2.1"
+            }           
+        ],
+        "role": [
+	        {
+	        	"role": "Designer"
+	        },
+	        {
+	        	"role": "Front-end Developer"
+	        }
+        ],
+        "year": "2010",
+        "images": [
+            {
+                "image":"allaboutdesign_industry800x600.jpg"
+            }
+        ]
 	},
-	"fock": {
-		"name": "FOCK ME WOMAN",
-        "type": "web"
+	"sct": {
+		"name": "Smart Cycle Tracker V2",
+        "category": "Web Design & Development",
+        "platform": "Responsive",
+        "link": "#",
+        "description": "SCT is a web application that allows women to track and log their fertility signs per monthly cycle. This image shows what the user sees once she's logged in",
+        "skills": [
+            {
+            	"skill": "Graphic Design"
+            },
+            {
+            	"skill": "Adobe Photoshop"
+            },
+            {
+            	"skill": "PHP frameworks"
+            },
+            {
+            	"skill": "jQuery"
+            },
+            {
+            	"skill": "Illustration"
+            },
+            {
+            	"skill": "Usability"
+            }
+        ],
+        "role": [
+            {
+            	"role":"Designer"
+            },
+            {
+            	"role": "Front-end Developer"
+            },
+            {
+            	"role": "Back-end Developer"
+            }  
+        ],
+        "team": [
+	        {
+				"member": "Carolina Yibirin-Stovall",
+				"role" : "Lead front-end & Designer"
+
+			},
+			{
+				"member": "Richard Stovall",
+				"role": "Lead back-end developer"
+			}
+		],
+        "year": "2012",
+        "images": [
+            {
+                "image":"sct-redesigned.png"
+            }
+        ]
+	},
+	"gg":{
+		"name": "Galaxy Grabber Layout",
+        "category": "Graphic Design",
+        "platform": "Print",
+        "link": "#",
+        "description": "Used Illustrator to create the toy and laid out type",
+        "skills": [
+            {
+            	"skill": "Graphic Design"
+            },
+            {
+            	"skill": "Adobe Photoshop"
+            },
+            {
+            	"skill": "Adobe Illustrator"
+            },
+            {
+            	"skill": "Layout"
+            },
+            {
+            	"skill": "Illustration"
+            }
+        ],
+        "role": [
+	        {
+	           "role": "Illustrator"
+	        },
+	        {
+	        	"role": "Graphic Designer"
+	        }
+        ],
+        "team": [
+	        {
+				"member": "Carolina Yibirin-Stovall",
+				"role" : "Graphic Designer & Illustrator"
+			}
+			
+		],
+        "year": "2010",
+        "images": [
+            {
+                "image":"mechanicalObj_800x600.jpg"
+            }
+            
+        ]
+	},
+	"ps":{
+		"name": "Posh Sweets Identity",
+		"category": "Graphic Design",
+		"platform": "Print & Web",
+		"link": "#",
+		"description": "Posh Sweets sweets. Identity Design",
+		"skills": [
+			{
+				"skill": "Logo Design"
+			},
+			{
+				"skill": "Identity Design"
+			}
+		],
+		"role": [
+			{ 
+				"role": "Graphic Designer"
+			}
+		],
+		"team": [
+	        {
+				"member": "Carolina Yibirin-Stovall",
+				"role" : "Designer"
+			}	
+		],
+		"year": "2013",
+		"images":[
+			{
+				"image": "13PS_logo_bw.jpg"
+			}
+		]
+	},
+	"sstm": {
+		"name": "Spectrum SST Mexico",
+        "category": "Mobile Design",
+        "platform": "iPhone, iPad & Android",
+        "link": "#",
+        "description": "Hybrid app",
+        "skills": [
+            {
+            	"skill": "Visual Design"
+            },
+            {
+            	"skill": "Adobe Photoshop"
+            }
+        ],
+        "team": [
+	        {
+				"member": "Carolina Yibirin-Stovall",
+				"role" : "Front-end & Lead Designer"
+
+			},
+			{
+				"member": "Richard Stovall",
+				"role": "Lead front-end developer"
+			}
+		],
+        "year": "2013",
+        
+        "images": [
+            {
+                "image":"spectrum.png"
+            }
+        ]
+	},
+	"anb":{
+		"name": "A New Beginning Inc",
+		"category": "Web Development",
+		"platform": "Web",
+		"link": "#",
+		"description": "A New Beginning Pet Rescue, Inc. is a pet rescue organization located in Orlando, Fl. The client wanted a site that allowed users to look at the pets up for adoption. They already had an account with Petfinder where they had listed the information",
+		"skills": [
+			{
+            	"skill": "Use of APIs"
+            },
+            {
+            	"skill": "Backbone.js"
+            },
+            {
+            	"skill": "jQuery"
+            },
+            {
+            	"skill": "javaScript"
+            },
+            {
+            	"skill": "HTML"
+            },
+            {
+            	"skill": "CSS"
+            }
+		],
+		"role": [
+			{ 
+				"role":"Front-end Developer"
+			}
+		],
+		"team": [
+	        {
+				"member": "Carolina Yibirin-Stovall",
+				"role" : "Lead Front-end Developer"
+
+			},
+			{
+				"member": "Richard Stovall",
+				"role": "Lead Designer"
+			}
+		],
+		"year": "2012",
+		"images":[
+			{
+				"image": "anb_index800x600.jpg"
+			}
+		]
 	}
+
 }

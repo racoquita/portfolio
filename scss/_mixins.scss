@@ -45,16 +45,7 @@ $devices: mobile 240px 479px 0px, large-phone 383px 767px 30px, tablet 400px 959
 							&:nth-child(even){
 								margin-left: 0;//$margin+1;
 					    	}
-					    	&.selected{
-					    		position: absolute;
-					    		left:0;
-					    		top:0;
-					    		right: 0;
-					    		bottom:0;
-					    		height: 100%;	
-					    		width: 100%;
-					    		z-index: 5;
-					    	}
+					    	
 					    }
 					}
 					$num: 0;
@@ -72,21 +63,7 @@ $devices: mobile 240px 479px 0px, large-phone 383px 767px 30px, tablet 400px 959
 					    	top: $itemHeight + 50px;
 					    	margin-right: 0;//$margin;
 					    	overflow: hidden;
-							&:nth-child(even){
-								//margin-left: $margin+1;
-
-					    	}
-					    	&.selected{
-					    		position: absolute;
-					    		top:0;
-					    		left:0;
-					    		bottom:0;
-					    		right: 0;
-					    		width: 100%;
-					    		height: 100%;
-
-					    	}
-					    	// border: 1px solid white;
+							
 					    }
 					}
 					$num: 0;
@@ -106,18 +83,8 @@ $devices: mobile 240px 479px 0px, large-phone 383px 767px 30px, tablet 400px 959
 					    	margin: 0;
 					    	&:nth-child(even){
 								margin-left: 0;
-
 		    				}
-					    	&.selected{
-					    		position: absolute;
-					    		top:0px;
-					    		left:0px;
-					    		bottom:0px;
-					    		right: 0px;
-					    		width: 100%;
-					    		height: 100%;
-					    		border: 1px solid white;
-					    	}			
+					    			
 					    }
 					}
 				}

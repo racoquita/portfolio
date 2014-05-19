@@ -37,12 +37,12 @@ h2 { width: 100%; text-align: center; margin-top: 50px; font-size: 5em; color: w
 .icon { font-family: 'icomoon'; font-weight: 100; font-size: 1.2em; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 header { position: absolute; right: 5%; top: 93%; height: 50px; left: 0; right: 0; z-index: 222; }
-@media screen and (max-width: 479px) { header { position: fixed; top: 0; }
+@media screen and (max-width: 479px) { header { display: none; position: fixed; top: 0; }
   header.stick { position: fixed; top: 0; } }
 @media screen and (min-width: 480px) and (max-width: 767px) { header { position: fixed; bottom: 0; }
   header.stick { position: fixed; bottom: 0; } }
-header.stick { position: fixed; top: 0px; right: 0px; left: 0; left: 0; background: rgba(0, 0, 0, 0.5); -webkit-box-shadow: 0 4px 6px -6px #5d6571; }
-header.stick:before { content: ""; position: fixed; top: inherit; right: inherit; border: 1px solid #000; -webkit-filter: blur(4px); }
+header.stick { position: fixed; top: 0px; right: 0px; left: 0; left: 0; background: rgba(0, 0, 0, 0.5); }
+header.stick:before { content: ""; position: fixed; top: inherit; right: inherit; border: 1px solid #000; }
 header nav { text-align: right; color: white; height: 100%; padding-right: 5%; line-height: 50px; }
 header nav a { font-size: 1.5em; padding-right: 10px; padding-left: 10px; }
 header nav a:last-child { border-right: none; }
@@ -56,9 +56,9 @@ header h1 span { font-size: .75em; margin-left: 10px; }
 
 #about { top: 0; bottom: 0; padding-top: 80px; background-color: #982f5e; }
 #about h3 { text-align: left; color: white; margin-top: 0; padding-top: 0; font-size: 3.6em; font-weight: normal; padding-left: 2%; padding-right: 2%; width: 70%; }
-#about h1 { color: white; width: 70%; margin: 0 auto; }
+#about h1 { color: white; width: 70%; margin: 50px auto; }
 #about h1 span { display: block; font-weight: 100; }
-@media screen and (max-width: 479px) { #about h1 { font-size: 1.5em; } }
+@media screen and (max-width: 479px) { #about h1 { font-size: 1.5em; width: 90%; } }
 @media screen and (min-width: 480px) and (max-width: 767px) { #about h1 { font-size: 1.2em; } }
 #about .introduction { text-align: left; font-size: 2.8em; color: white; width: 70%; margin: 0 auto; }
 #about .introduction .def { position: relative; }
@@ -75,92 +75,79 @@ header h1 span { font-size: .75em; margin-left: 10px; }
 #portfolio { top: 100%; background-color: #242b2e; }
 #portfolio .close { position: absolute; display: block; right: 3%; top: 80px; z-index: 111; height: 44px; width: 44px; text-align: center; line-height: 44px; display: none; font-weight: 500; font-size: 2em; }
 #portfolio .clone img { opacity: 0; -webkit-transition: all 1s ease; -webkit-transition-delay: 1s; }
-#portfolio .clone.full { position: absolute; left: 0px !important; top: 0px !important; right: 0px !important; bottom: 0px !important; width: 100% !important; height: 700px !important; background-color: #242b2e; z-index: 20; -webkit-transition: all 1s ease; border: 1px solid red; }
+#portfolio .clone > * { opacity: 0; -webkit-transition: all 1s ease; -webkit-transition-delay: 1s; }
+#portfolio .clone.full { position: absolute; left: 0px !important; top: 0px !important; right: 0px !important; bottom: 0px !important; width: 100% !important; height: 700px !important; background-color: #242b2e; z-index: 20; -webkit-transition: all 1s ease; padding-top: 50px; padding-left: 1%; }
 #portfolio .clone.full > * { opacity: 0; -webkit-transition: all 1s ease; -webkit-transition-delay: 1s; }
+#portfolio .clone.full img { display: inline-block; width: 55%; top: 50px; }
+#portfolio .clone.full .expanded-info { width: 33%; position: absolute; top: 45px; left: 60%; right: 0; color: white; -webkit-transition: all 1s ease; }
+#portfolio .clone.full .expanded-info dl { font-size: 1.3em; top: 50px; }
+#portfolio .clone.full .expanded-info dt { font-weight: 700; padding: 2px; color: #465359; }
+#portfolio .clone.full .expanded-info dd { margin-left: 1%; margin-top: 5px; margin-bottom: 5px; font-weight: 300; color: #9eacb3; }
+#portfolio .clone.full .expanded-info #fullImg { max-height: 550px; overflow: hidden; }
+@media screen and (max-width: 479px) { #portfolio .clone.full .expanded-info { left: 0%; top: 60%; } }
+@media screen and (min-width: 480px) and (max-width: 767px) { #portfolio .clone.full .expanded-info { left: 30px; top: 60%; } }
 #portfolio .galleryList { margin: 0px auto 0 auto; height: 100%; min-height: 700px; padding-top: 0px; padding-left: 25px; padding-right: 25px; position: relative; }
-#portfolio .galleryList .come-in { -webkit-transform: translateY(150px); -webkit-animation: come-in 2s ease forwards; }
 @media screen and (max-width: 479px) { #portfolio .galleryList { width: 100%; padding: 0; } }
-#portfolio .galleryList li { position: absolute; list-style-type: none; overflow: hidden; display: inline-block; overflow: hidden; height: 300px; margin: 0; width: 30%; -webkit-box-shadow: inset 0 0 1px #666f7c; box-shadow: inset 0 0 1px #666f7c; }
-#portfolio .galleryList li .info { font-size: 1.2em; position: absolute; right: 0; left: 0; background: white; z-index: 0; }
-#portfolio .galleryList li .info .hover { display: block; }
-#portfolio .galleryList li .info .hover img { display: none; }
+#portfolio .galleryList li { position: absolute; list-style-type: none; overflow: hidden; display: inline-block; overflow: hidden; height: 300px; margin: 0; width: 30%; background: #fff; }
+#portfolio .galleryList li .info { font-size: 1.2em; position: absolute; right: 0; left: 0; bottom: 0; top: 340px; text-align: center; color: white; background: rgba(0, 0, 0, 0.7); z-index: 0; padding: 50% auto; }
+#portfolio .galleryList li .info dl { padding-top: 25%; }
 #portfolio .galleryList li img { max-width: 100%; -webkit-transition: all 2s ease; transition: all 2s ease; }
 #portfolio .galleryList li:hover { cursor: pointer; }
 #portfolio .galleryList li:hover img { -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50); opacity: 0.5; }
 #portfolio .galleryList li:nth-child(1) { left: 2.77778%; top: 50px; overflow: hidden; }
-#portfolio .galleryList li:nth-child(1).selected { left: 0; top: 0; }
 #portfolio .galleryList li:nth-child(2) { left: 34.02778%; top: 50px; overflow: hidden; }
-#portfolio .galleryList li:nth-child(2).selected { left: 0; top: 0; }
 #portfolio .galleryList li:nth-child(3) { left: 65.27778%; top: 50px; overflow: hidden; }
-#portfolio .galleryList li:nth-child(3).selected { left: 0; top: 0; }
 #portfolio .galleryList li:nth-child(4) { left: 96.52778%; top: 50px; overflow: hidden; }
-#portfolio .galleryList li:nth-child(4).selected { left: 0; top: 0; }
-#portfolio .galleryList li:nth-child(4) { left: 2.77778%; top: 320px; overflow: hidden; }
-#portfolio .galleryList li:nth-child(4).selected { top: 0; left: 0; }
-#portfolio .galleryList li:nth-child(5) { left: 34.02778%; top: 320px; overflow: hidden; }
-#portfolio .galleryList li:nth-child(5).selected { top: 0; left: 0; }
-#portfolio .galleryList li:nth-child(6) { left: 65.27778%; top: 320px; overflow: hidden; }
-#portfolio .galleryList li:nth-child(6).selected { top: 0; left: 0; }
-@media screen and (max-width: 479px) { #portfolio .galleryList li:nth-child(1) { left: 0%; top: 50px; width: 50.10438%; max-width: 240px; height: 150px; overflow: hidden; }
+#portfolio .galleryList li:nth-child(4) { left: 2.77778%; top: 360px; overflow: hidden; }
+#portfolio .galleryList li:nth-child(5) { left: 34.02778%; top: 360px; overflow: hidden; }
+#portfolio .galleryList li:nth-child(6) { left: 65.27778%; top: 360px; overflow: hidden; }
+@media screen and (max-width: 479px) { #portfolio .galleryList { background-color: #242b2e; }
+  #portfolio .galleryList li:nth-child(1) { left: 0%; top: 50px; width: 50.10438%; max-width: 240px; height: 150px; overflow: hidden; }
   #portfolio .galleryList li:nth-child(1):nth-child(even) { margin-left: 0; }
-  #portfolio .galleryList li:nth-child(1).selected { position: absolute; left: 0; top: 0; right: 0; bottom: 0; height: 100%; width: 100%; z-index: 5; }
   #portfolio .galleryList li:nth-child(2) { left: 50.10438%; top: 50px; width: 50.10438%; max-width: 240px; height: 150px; overflow: hidden; }
   #portfolio .galleryList li:nth-child(2):nth-child(even) { margin-left: 0; }
-  #portfolio .galleryList li:nth-child(2).selected { position: absolute; left: 0; top: 0; right: 0; bottom: 0; height: 100%; width: 100%; z-index: 5; }
   #portfolio .galleryList li:nth-child(3) { left: 100.20877%; top: 50px; width: 50.10438%; max-width: 240px; height: 150px; overflow: hidden; }
   #portfolio .galleryList li:nth-child(3):nth-child(even) { margin-left: 0; }
-  #portfolio .galleryList li:nth-child(3).selected { position: absolute; left: 0; top: 0; right: 0; bottom: 0; height: 100%; width: 100%; z-index: 5; }
   #portfolio .galleryList li:nth-child(3) { width: 50.10438%; height: 150px; left: 0%; top: 200px; margin-right: 0; overflow: hidden; }
-  #portfolio .galleryList li:nth-child(3).selected { position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; }
   #portfolio .galleryList li:nth-child(4) { width: 50.10438%; height: 150px; left: 50.10438%; top: 200px; margin-right: 0; overflow: hidden; }
-  #portfolio .galleryList li:nth-child(4).selected { position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; }
   #portfolio .galleryList li:nth-child(5) { left: 0%; top: 350px; width: 50.10438%; max-width: 240px; height: 150px; overflow: hidden; margin: 0; }
   #portfolio .galleryList li:nth-child(5):nth-child(even) { margin-left: 0; }
-  #portfolio .galleryList li:nth-child(5).selected { position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; width: 100%; height: 100%; border: 1px solid white; }
   #portfolio .galleryList li:nth-child(6) { left: 50.10438%; top: 350px; width: 50.10438%; max-width: 240px; height: 150px; overflow: hidden; margin: 0; }
-  #portfolio .galleryList li:nth-child(6):nth-child(even) { margin-left: 0; }
-  #portfolio .galleryList li:nth-child(6).selected { position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; width: 100%; height: 100%; border: 1px solid white; } }
+  #portfolio .galleryList li:nth-child(6):nth-child(even) { margin-left: 0; } }
 @media screen and (min-width: 480px) and (max-width: 767px) { #portfolio .galleryList li:nth-child(1) { left: 0%; top: 50px; width: 49.93481%; max-width: 383px; height: 209.375px; overflow: hidden; }
   #portfolio .galleryList li:nth-child(1):nth-child(even) { margin-left: 0; }
-  #portfolio .galleryList li:nth-child(1).selected { position: absolute; left: 0; top: 0; right: 0; bottom: 0; height: 100%; width: 100%; z-index: 5; }
   #portfolio .galleryList li:nth-child(2) { left: 49.93481%; top: 50px; width: 49.93481%; max-width: 383px; height: 209.375px; overflow: hidden; }
   #portfolio .galleryList li:nth-child(2):nth-child(even) { margin-left: 0; }
-  #portfolio .galleryList li:nth-child(2).selected { position: absolute; left: 0; top: 0; right: 0; bottom: 0; height: 100%; width: 100%; z-index: 5; }
   #portfolio .galleryList li:nth-child(3) { left: 99.86962%; top: 50px; width: 49.93481%; max-width: 383px; height: 209.375px; overflow: hidden; }
   #portfolio .galleryList li:nth-child(3):nth-child(even) { margin-left: 0; }
-  #portfolio .galleryList li:nth-child(3).selected { position: absolute; left: 0; top: 0; right: 0; bottom: 0; height: 100%; width: 100%; z-index: 5; }
   #portfolio .galleryList li:nth-child(3) { width: 49.93481%; height: 209.375px; left: 0%; top: 259.375px; margin-right: 0; overflow: hidden; }
-  #portfolio .galleryList li:nth-child(3).selected { position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; }
   #portfolio .galleryList li:nth-child(4) { width: 49.93481%; height: 209.375px; left: 49.93481%; top: 259.375px; margin-right: 0; overflow: hidden; }
-  #portfolio .galleryList li:nth-child(4).selected { position: absolute; top: 0; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; }
   #portfolio .galleryList li:nth-child(5) { left: 0%; top: 468.75px; width: 49.93481%; max-width: 383px; height: 209.375px; overflow: hidden; margin: 0; }
   #portfolio .galleryList li:nth-child(5):nth-child(even) { margin-left: 0; }
-  #portfolio .galleryList li:nth-child(5).selected { position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; width: 100%; height: 100%; border: 1px solid white; }
   #portfolio .galleryList li:nth-child(6) { left: 49.93481%; top: 468.75px; width: 49.93481%; max-width: 383px; height: 209.375px; overflow: hidden; margin: 0; }
-  #portfolio .galleryList li:nth-child(6):nth-child(even) { margin-left: 0; }
-  #portfolio .galleryList li:nth-child(6).selected { position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; width: 100%; height: 100%; border: 1px solid white; } }
+  #portfolio .galleryList li:nth-child(6):nth-child(even) { margin-left: 0; } }
 
 #faq { top: 200%; background-color: #e2deb6; }
 #faq article { font-size: 1em; color: #242b2e; }
 #faq article:hover { background-color: #dbd6a4; }
 #faq h3 { color: #242b2e; font-size: 1.8em; }
 
-#contact { top: 200%; background-color: #666f7c; }
-#contact form { width: 60%; margin: 25px auto 0 auto; }
+#contact { top: 200%; background-color: rgba(36, 43, 46, 0.6); }
+#contact form { width: 60%; margin: 70px auto 0 auto; }
 #contact form p { margin-top: 15px; }
-#contact form label { width: 30%; display: inline-block; text-align: right; font-weight: 500; font-size: 1.6em; margin-right: 1%; color: #383d44; }
-#contact form input, #contact form textarea { -webkit-appearance: none; border: none; height: 30px; padding: 5px; width: 40%; background: #7f8896; border-radius: 2px; color: white; border-top: 1px solid #616a76; }
+#contact form label { width: 30%; display: inline-block; text-align: right; font-weight: 500; font-size: 1.6em; margin-right: 1%; color: rgba(0, 0, 0, 0.6); }
+#contact form input, #contact form textarea { -webkit-appearance: none; border: none; height: 30px; padding: 5px; width: 40%; background: rgba(58, 69, 74, 0.6); border-radius: 2px; color: white; border-top: 1px solid rgba(31, 37, 40, 0.6); }
 #contact form input[type="submit"] { height: 40px; }
 #contact form textarea { resize: none; height: 200px; width: 40%; }
 #contact form input[type="submit"] { background-color: #982f5e; text-transform: uppercase; font-weight: 700; }
-@media screen and (min-width: 768px) and (max-width: 959px) { #contact form { width: 80%; margin: 20px auto 0 auto; } }
-@media screen and (max-width: 479px) { #contact form { width: 95%; border: 1px solid #000; }
+@media screen and (max-width: 479px) { #contact form { width: 95%; }
   #contact form label, #contact form input, #contact form textarea { width: 100%; margin-right: 0; }
   #contact form label { text-align: left; font-size: 1em; }
   #contact form textarea { height: 100px; } }
-@media screen and (min-width: 480px) and (max-width: 767px) { #contact form { width: 95%; border: 1px solid blue; }
+@media screen and (min-width: 480px) and (max-width: 767px) { #contact form { width: 95%; }
   #contact form label, #contact form input, #contact form textarea { width: 100%; }
   #contact form label { text-align: left; } }
+@media screen and (min-width: 768px) and (max-width: 959px) { #contact form { width: 80%; margin: 20px auto 0 auto; } }
 
 .come-in { -webkit-transform: translateY(150px); -webkit-animation: come-in 2s ease forwards; }
 
