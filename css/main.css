@@ -100,7 +100,7 @@ header h1 span { font-size: .75em; margin-left: 10px; }
 #portfolio .clone.full img { display: inline-block; width: 55%; top: 50px; }
 @media screen and (max-width: 479px) { #portfolio .clone.full img { width: 95%; } }
 @media screen and (max-width: 479px) { #portfolio .clone.full { height: 170%; } }
-#portfolio .clone.full #imgFull { max-height: 550px; overflow: hidden; }
+#portfolio .clone.full #imgFull { max-height: 600px; overflow: hidden; }
 @media screen and (max-width: 479px) { #portfolio .clone.full #imgFull img { margin: 0 auto; width: 100%; } }
 @media screen and (max-width: 479px) { #portfolio .clone.full #imgFull { max-height: 250px; width: 95%; margin: 0 auto; } }
 #portfolio .clone.full .expanded-info { width: 33%; position: absolute; top: 45px; left: 60%; right: 0; color: white; -webkit-transition: all 1s ease; }
