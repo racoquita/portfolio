@@ -80,7 +80,7 @@ var checkWindowTop = function(){
 	return $(window).scrollTop();
 }
 var stickyNav = function() {
-	var scrollTop =  $(window).scrollTop();//$(window).scrollTop(); 
+	var scrollTop =  $(window).scrollTop();
 	if (scrollTop >= $('nav').offset().top && ! header.hasClass('stick')) {   
 	    header.addClass('stick');  
 	   
@@ -100,9 +100,19 @@ var handleScrolling = function () {
 	    }
 	});
 }
+var initMasonry = function () {
+	console.log('initializing masonry')
+	var container = $('#gallery');
+	container.masonry({
+	  columnWidth: '.grid-sizer',
+	  gutter:10,
+	  itemSelector: '.item'
+	});
+}
 var init = function(){
-	$.getJSON('http://localhost/14Personal/scrolling/json/data.json', function(res){
+	$.getJSON('json/data.json', function(res){
 		port = res;
+		//categories = res
 		//console.log(res)
 	});
 
@@ -125,7 +135,7 @@ var init = function(){
 	$('.part2').fadeIn('slow').delay(100).fadeOut('slow');
 	$('.scroll-signifier').toggleClass('hidden').addClass('come-in');
 	$('#sm').toggleClass('hidden').addClass('come-in');
-		
+	initMasonry();
   	stickyNav();
 
   	setTimeout(function(){
@@ -146,15 +156,25 @@ var setItemGalleryHeight = function() {
 	}
 	
 }
-var itemClickHandler = function (e) {
-	if(Modernizr.touch){
+var grabAllfromSelCat = function(worksArr, cat){
+		var works = []
+		$.each(worksArr, function(i, work) {
 			
-			alert(e.type)
-	}
-	console.log(e)
+			if(work.category == cat){
+				console.log(work.category);
+			}
+
+		});
+}
+var itemClickHandler = function (e) {
+	
 	selLi = $(e.target).closest('li');
 		var selected = selLi.find('.contain').data('name');
+		var categorySelected = selLi.find('.contain').data('category')
 		var data = port[selected];
+		
+		//grabAllfromSelCat(data.category)
+		grabAllfromSelCat(port, data.category);
 		var clone = selLi.find('.contain').clone();
 		
 		clone.addClass('clone').css({
@@ -217,34 +237,6 @@ $(document).ready(function() {
 	galleryItem.on('click', function (e){
 
 		itemClickHandler(e);
-		
-		// selLi = $(e.target).closest('li');
-		// var selected = selLi.find('.contain').data('name');
-		// var data = port[selected];
-		// var clone = selLi.find('.contain').clone();
-		
-		// clone.addClass('clone').css({
-		// 	top: selLi.position().top,
-		// 	left:selLi.position().left,
-		// 	width:selLi.width(),
-		// 	height:selLi.height()
-		// });
-		// $(portfolio).append(clone);
-		// $(clone).html(raco.selectedWork(data));
-		
-		// setTimeout(function() {
-		// 	$(clone).addClass('full');
-
-		// 	setTimeout(function(){
-		// 		$(clone).find('img').css('opacity', 1);
-		// 		$(clone).find('.expanded-info').css('opacity', 1);
-		// 		$(clone).find('dl').css('opacity', 1);
-		// 		$(clone).children().css('opacity', 1);
-		// 	}, 10);
-		// }, 10);
-		
-		// closeLink.show();
-		// animateTo(portfolio);
 		return false;
 	});
 	//$('.info').on('click', 'itemClickHandler')

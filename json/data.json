@@ -2,6 +2,7 @@
 	"allAboutDesign": {
 		"name": "All About Design",
         "category": "Web",
+        "type": "web",
         "platform": "Web",
         "icon": "&#xe002;",
         "link": "#",
@@ -38,6 +39,7 @@
 	"sct": {
 		"name": "Smart Cycle Tracker V2",
         "category": "Web Design & Development",
+        "type": "web",
         "platform": "Responsive",
         "icon": "&#xe002;",
         "link": "#",
@@ -94,6 +96,7 @@
 	"gg":{
 		"name": "Galaxy Grabber Layout",
         "category": "Graphic Design",
+        "type": "print",
         "platform": "Print",
         "icon": "&#xe002;",
         "link": "#",
@@ -141,6 +144,7 @@
 	"ps":{
 		"name": "Posh Sweets Identity",
 		"category": "Graphic Design",
+        "type": "Identity",
 		"platform": "Print & Web",
         "icon": "&#xe626;",
 		"link": "#",
@@ -174,6 +178,7 @@
 	"sstm": {
 		"name": "Spectrum SST Mexico",
         "category": "Mobile Design",
+        "type": "web",
         "platform": "iPhone, iPad & Android",
         "icon": "&#xe000;",
         "link": "#",
@@ -208,6 +213,7 @@
 	"anb":{
 		"name": "A New Beginning Inc",
 		"category": "Web Development",
+        "type": "web",
 		"platform": "Web",
         "icon": "&#xe002;",
 		"link": "#",

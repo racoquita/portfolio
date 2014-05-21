@@ -23,6 +23,7 @@
         <script src="js/plugins.js"></script>
 
         <script src="js/main.js"></script>
+        <script src="js/vendor/masonry.pkgd.min.js"></script>
          <!--CDN links for the latest TweenLite, CSSPlugin, and EasePack-->
          <script src="js/vendor/greensock-v12-js/src/minified/TweenMax.min.js"></script>
 
@@ -30,6 +31,7 @@
          <script src="js/vendor/greensock-v12-js/src/minified/plugins/ScrollToPlugin.min.js"></script>
         <script src="js/vendor/greensock-v12-js/src/minified/easing/EasePack.min.js"></script>
         <script src="js/vendor/greensock-v12-js/src/minified/TweenLite.min.js"></script>
+
     </head>
     <body>
     <div id="wrapper">
@@ -51,8 +53,8 @@
         </section>
         <section class="bg" id="portfolio">  
             <ul id="gallery" class="galleryList">
-                <li>
-                    <div class="contain" data-name="allAboutDesign">
+                <li class="item grid-sizer">
+                    <div class="contain" data-name="allAboutDesign" data-type="web">
                         <img data-title="All About design" src="img/allaboutdesign_industry800x600.jpg">
                         <div class="info">
                             <dl>
@@ -63,7 +65,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="item">
                     <div class="contain" data-name="sct">
                         <img data-title="Smart Cycle Tracker" src="img/sct-redesigned.png">
                         <div class="info">
@@ -74,8 +76,8 @@
                         </div>
                     </div>
                 </li>
-                <li>
-                    <div class="contain" data-name="gg">
+                <li class="item">
+                    <div class="contain" data-name="gg" data-type="print">
                         <img data-title="Galaxy Grabber" src="img/mechanicalObj_800x600.jpg" >
                         <div class="info">
                             <dl>
@@ -88,7 +90,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="item">
                     <div class="contain" data-name="ps">
                         <img data-title="Posh Sweet Logo" src="img/13PS_logo_bw.jpg">
                         <div class="info">
@@ -101,7 +103,7 @@
                         </div>
                     </div>
                 </li>
-                <li>
+                <li class="item">
                     <div class="contain" data-name="sstm">
                         <img data-title="Spectrum Consultores" src="img/spectrum.png">
                          <div class="info">
@@ -112,7 +114,7 @@
                          </div>
                     </div>
                 </li>
-                <li>
+                <li class="item">
                     <div class="contain" data-name="anb">
                         <img data-title="A New Beginning" src="img/anb_index800x600.jpg">
                         <div class="info">
@@ -178,6 +180,17 @@
             </form>
 
         </section>
+        <!-- <section class="bg" id="cat-stack">
+            <div>
+              <a href="#" class="img-link stacked item-1"><img src="http://placehold.it/300x200&text=item-1"/>
+                </a>
+
+              <a href="#" class="img-link stacked item-2"><img src="http://placehold.it/300x200&text=item-2"/>
+                </a>
+              <a href="#" class="img-link stacked item-3"><img src="http://placehold.it/300x200&text=item-3"/>
+                </a>
+            </div>
+        </section> -->
     
         <header>
             <nav>
