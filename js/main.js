@@ -127,6 +127,10 @@ var init = function(){
 	$('#sm').toggleClass('hidden').addClass('come-in');
 		
   	stickyNav();
+
+  	setTimeout(function(){
+  		$('.scroll-signifier').removeClass('come-in').addClass('animated bounce');
+  	}, 1000);
   	
 }
 var test = function() {

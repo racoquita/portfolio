@@ -3,6 +3,7 @@
 		"name": "All About Design",
         "category": "Web",
         "platform": "Web",
+        "icon": "&#xe002;",
         "link": "#",
         "description": "This is a ficticious site allaboutdesign.com where users can find up-to-date industry information and resources. ",
         "skills": [
@@ -38,6 +39,7 @@
 		"name": "Smart Cycle Tracker V2",
         "category": "Web Design & Development",
         "platform": "Responsive",
+        "icon": "&#xe002;",
         "link": "#",
         "description": "SCT is a web application that allows women to track and log their fertility signs per monthly cycle. This image shows what the user sees once she's logged in",
         "skills": [
@@ -93,6 +95,7 @@
 		"name": "Galaxy Grabber Layout",
         "category": "Graphic Design",
         "platform": "Print",
+        "icon": "&#xe002;",
         "link": "#",
         "description": "Used Illustrator to create the toy and laid out type",
         "skills": [
@@ -139,6 +142,7 @@
 		"name": "Posh Sweets Identity",
 		"category": "Graphic Design",
 		"platform": "Print & Web",
+        "icon": "&#xe626;",
 		"link": "#",
 		"description": "Posh Sweets sweets. Identity Design",
 		"skills": [
@@ -171,6 +175,7 @@
 		"name": "Spectrum SST Mexico",
         "category": "Mobile Design",
         "platform": "iPhone, iPad & Android",
+        "icon": "&#xe000;",
         "link": "#",
         "description": "Hybrid app",
         "skills": [
@@ -204,6 +209,7 @@
 		"name": "A New Beginning Inc",
 		"category": "Web Development",
 		"platform": "Web",
+        "icon": "&#xe002;",
 		"link": "#",
 		"description": "A New Beginning Pet Rescue, Inc. is a pet rescue organization located in Orlando, Fl. The client wanted a site that allowed users to look at the pets up for adoption. They already had an account with Petfinder where they had listed the information",
 		"skills": [

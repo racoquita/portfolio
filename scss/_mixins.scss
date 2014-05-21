@@ -20,28 +20,29 @@
 		@media screen and (min-width : 1200px) { @content; }
 	}
 }
-$devices: mobile 240px 479px 0px, large-phone 383px 767px 30px, tablet 400px 959px 50px;
+$devices: mobile 260px 479px 0px, large-phone 383px 767px 30px, tablet 400px 959px 50px;
 @mixin respondGallery($d) {
 			@each $device in $devices{
 				@if nth($device, 1) == $d {
 					$itempxwidth : nth($device, 2);
 					
-					$margin : percentage(10px/nth($device, 3));
+					//$margin : percentage(10px/nth($device, 3));
 					$itemWidth: percentage($itempxwidth/ nth($device, 3));
 					//$margin : percentage(10px/nth($device, 3));
-					$itemHeight: $itempxwidth / 1.6 - nth($device, 4);
+					$itemHeight:  $itempxwidth * 0.75;//$itempxwidth / 1.6 - nth($device, 4);
 					$i:0;
 					@for $i from 0 through 2 {
 						$val:  $i * $itemWidth;
 					    $value: $val;
 					    li:nth-child(#{$i+1}){
+					    	border: 1px solid white;
 					    	left:  $value;
-					    	top:50px;
+					    	top:20px;
 					    	width: $itemWidth;
 					    	max-width: $itempxwidth;
 					    	height: $itemHeight;
 					    	overflow: hidden;
-
+							
 							&:nth-child(even){
 								margin-left: 0;//$margin+1;
 					    	}
@@ -51,7 +52,6 @@ $devices: mobile 240px 479px 0px, large-phone 383px 767px 30px, tablet 400px 959
 					$num: 0;
 					@for $b from 3 through 4 {
 						
-					    
 					    $val:  $num  * $itemWidth;
 					    $num: $num +1;
 					    $value: $val;
@@ -60,7 +60,7 @@ $devices: mobile 240px 479px 0px, large-phone 383px 767px 30px, tablet 400px 959
 					    	//max-width: $itempxwidth;
 					    	height: $itemHeight;
 					    	left:  $value;
-					    	top: $itemHeight + 50px;
+					    	top: $itemHeight + 20px;
 					    	margin-right: 0;//$margin;
 					    	overflow: hidden;
 							
@@ -74,7 +74,7 @@ $devices: mobile 240px 479px 0px, large-phone 383px 767px 30px, tablet 400px 959
 					    $value: $val;
 					    li:nth-child(#{$b}){
 					    	left:  $value;
-					    	top: (2 * $itemHeight ) + 50px;
+					    	top: (2 * $itemHeight ) + 40px;
 					    	width: $itemWidth;
 					    	max-width: $itempxwidth ;
 					    	height: $itemHeight;
