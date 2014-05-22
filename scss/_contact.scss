@@ -3,10 +3,10 @@
 	top: 200%;
 	background-color: $contactColor;
 	@include breakpoint(mobile) {
-	 	top: 270%;
+	 	//top: 270%;
 	}
 	@include breakpoint(large-phone) {
-	 	top: 270%;
+	 	//top: 270%;
 	}
 	
 	form{

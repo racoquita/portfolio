@@ -40,14 +40,11 @@ var getCurrentSection = function () {
 			
 		    inViewSection = el.attr('id');
 		} 
-		// if( ($(window).scrollTop() >= $(elem).offset().top - $(window).innerHeight() / 2)  && ( $(window).scrollTop() <= $(elem).offset().top  + $(window).innerHeight() /2 ) ){
-		// 	inViewSection = $(elem).attr('id');
-		// }
 	});
 
 	return inViewSection
 }
-var clearTimeouts = function(argument) {
+var clearTimeouts = function() {
 	clearTimeout(to[0]);
  	clearTimeout(to[1]);
 }
@@ -99,10 +96,10 @@ var handleScrolling = function () {
 	    }
 	});
 }
-var initMasonry = function () {
-	console.log('initializing masonry')
+var initPackery = function () {
+	console.log('initializing packery')
 	 
-	container.masonry({
+	container.packery({
 	  columnWidth: '.grid-sizer',
 	  gutter:10,
 	  itemSelector: '.item'
@@ -111,8 +108,6 @@ var initMasonry = function () {
 var init = function(){
 	$.getJSON('json/data.json', function(res){
 		port = res;
-		//categories = res
-		//console.log(res)
 	});
 
 	Modernizr.load({  
@@ -151,9 +146,9 @@ var resetNavPosition = function() {
 	header.css({top: getInnerHeight() - header.height() +'px'})
 }
 var setItemGalleryHeight = function() {
-	if(getInnerHeight() < 500){
-		galleryItem.css({height: getInnerHeight() / 3+'px'})
-	}
+	// if(getInnerHeight() < 500){
+	// 	galleryItem.css({height: getInnerHeight() / 3+'px'})
+	// }
 	
 }
 var grabAllfromSelCat = function(worksArr, cat){
@@ -175,7 +170,8 @@ var itemClickHandler = function (e) {
 		
 		//grabAllfromSelCat(data.category)
 		grabAllfromSelCat(port, data.category);
-		var clone = selLi.find('.contain').clone();
+		//var clone = selLi.find('.contain').clone();
+		var clone = $('<div class="contain"></div>');
 		
 		clone.addClass('clone').css({
 			top: selLi.position().top,
@@ -206,7 +202,8 @@ var itemClickHandler = function (e) {
 $(document).ready(function() {
 
 	init();
-	initMasonry();
+	//initMasonry();
+	initPackery();
 	navLink.on('click', function (e){
 		id = $(e.currentTarget).data('scroll');
 		navLink.removeClass('active');

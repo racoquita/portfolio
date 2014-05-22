@@ -11,7 +11,8 @@
     left:0px;
     top:0px;
     opacity:1;
-    transform: rotate(-1deg) scaleX(0.5) scaleY(0.5) ;
+    transform: rotate(-1deg) scaleX(0.5) scaleY(0.5);
+
   }
   52% {
     //left:116px;
@@ -175,42 +176,29 @@ h2{
   		  animation-iteration-count: 2;
 }
 .bounce {
-  -webkit-animation-name: bounce;
-  	   -moz-animation-name:bouce;
-  	   -ms-animation-name:bouce;
-  		  animation-name: bounce;
+  	@include prefix(animation-name, bounce);
 }
 .come-in {
-  -webkit-transform: translateY(150px);
-  	 -moz-transform: translateY(150px);
-  		  transform: translateY(150px);
-
-  -webkit-animation: come-in 2s ease forwards;
-  	 -moz-animation: come-in 2s ease forwards;
-  		  animation: come-in 2s ease forwards;
+	@include prefix(transform, translateY(150px));
+  	@include prefix(animation, come-in 2s ease forwards);
 }
 .come-in:nth-child(odd) {
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration:1s;
+  @include prefix(animation-duration, 1s);
 }
 .already-visible {
-  -webkit-transform: translateY(0);
-  -moz-transform:translateY(0);
-  transform:translateY(0);
-  -webkit-animation: none;
-  -moz-animation:none;
-  animation:none;
+ 
+  @include prefix(transform, translateY(0));
+  @include prefix(animation, none);
+
 }
 .bg{
 	position: absolute;
 	right: 0;
 	left: 0;
-	background-color: $aboutColor;
 	height: 100%;
-	-webkit-transition: all 1s ease;
-	-moz-transition:all 1s ease;
-	transition:all 1s ease;
 	overflow: hidden;
+	background-color: $aboutColor;
+	@include prefix(transition, all 1s ease);	
 	.content{
 		width: 80%;
 		margin: 0 auto;
