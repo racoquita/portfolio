@@ -21,6 +21,7 @@ var scrollBox;
 var info;
 var selLi;
 var port;
+var container;
 
 function getInnerWidth(){
 
@@ -67,12 +68,10 @@ var animateTo = function(currSection){
 }
 var updateNav = function(section){
 
-	activeNav = $('nav a[data-scroll="'+section+'"');
+	activeNav = $('nav a[data-scroll="'+section+'"]');
 	if(! activeNav.hasClass('active')) {
 		$('.active').removeClass('active');
 		activeNav.addClass('active');
-		header.css({'background': $('#'+section).css('background')})
-		
 	}
 	stickyNav();
 }
@@ -102,7 +101,7 @@ var handleScrolling = function () {
 }
 var initMasonry = function () {
 	console.log('initializing masonry')
-	var container = $('#gallery');
+	 
 	container.masonry({
 	  columnWidth: '.grid-sizer',
 	  gutter:10,
@@ -130,12 +129,13 @@ var init = function(){
   	navLink = $('nav a');
   	header = $('header');
   	scrollBox = $('#wrapper');
+  	container = $('#gallery');
   	var to = [];
   	
 	$('.part2').fadeIn('slow').delay(100).fadeOut('slow');
 	$('.scroll-signifier').toggleClass('hidden').addClass('come-in');
 	$('#sm').toggleClass('hidden').addClass('come-in');
-	initMasonry();
+	
   	stickyNav();
 
   	setTimeout(function(){
@@ -183,8 +183,10 @@ var itemClickHandler = function (e) {
 			width:selLi.width(),
 			height:selLi.height()
 		});
+		
 		$(portfolio).append(clone);
 		$(clone).html(raco.selectedWork(data));
+		// $('#imgFull').jslide();
 		
 		setTimeout(function() {
 			$(clone).addClass('full');
@@ -204,7 +206,7 @@ var itemClickHandler = function (e) {
 $(document).ready(function() {
 
 	init();
-
+	initMasonry();
 	navLink.on('click', function (e){
 		id = $(e.currentTarget).data('scroll');
 		navLink.removeClass('active');
@@ -239,13 +241,11 @@ $(document).ready(function() {
 		itemClickHandler(e);
 		return false;
 	});
-	//$('.info').on('click', 'itemClickHandler')
+	
 	closeLink.on('click', function (e) {
 		$('.clone').remove();
-		
-		 $(this).hide();
-		 animateTo(portfolio);
-		
+		$(this).hide();
+		animateTo(portfolio);
 		return false;
 	});
 	$( "form" ).on( "submit", function( event ) {

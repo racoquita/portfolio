@@ -1,6 +1,10 @@
 @import 'vars';
 @import 'fonts';
 @import 'mixins';
+@import 'header';
+@import 'about';
+@import 'contact';
+@import 'gallery';
 
 @-webkit-keyframes animationFrames{
   0% {
@@ -23,8 +27,46 @@
 @-webkit-keyframes come-in {
   to { -webkit-transform: translateY(0); }
 }
+@-moz-keyframes come-in {
+  to { -moz-transform: translateY(0); }
+}
 @keyframes come-in {
   to { transform: translateY(0); }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    	-ms-transform: translateY(0);
+    		transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    	-ms-transform: translateY(-30px);
+    		transform: translateY(-30px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-15px);
+    	-ms-transform: translateY(-15px);
+    		transform: translateY(-15px);
+  }
 }
 *{
 	-webkit-box-sizing:border-box;
@@ -47,56 +89,6 @@
 :-ms-input-placeholder {  
    color: white;  
 }
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-iteration-count: 2;
-  animation-iteration-count: 2;
-}
-@-webkit-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  40% {
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-
-  60% {
-    -webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  40% {
-    -webkit-transform: translateY(-30px);
-    -ms-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-
-  60% {
-    -webkit-transform: translateY(-15px);
-    -ms-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
-}
-
-.bounce {
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
-}
-
 body{
 	font-family: 'brandon-grotesque', arial, helvetica, sans-serif;
 	font-size: 62.5%;
@@ -125,8 +117,6 @@ html.touch{
 	
 	}
 }
-
-
 li{
 	list-style-type: none;
 }
@@ -173,89 +163,45 @@ h2{
 	font-size: 1.2em;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	
 }
-header{
-	
-	position: absolute;
-	right: 5%;
-	top:93.2%;
-	height: 50px;
-	left: 0;
-	right: 0;
-	z-index: 222;
-	@include breakpoint(mobile) {
-		display: none;
-		position: fixed;
-		top:0;
-		&.stick{
-			position: fixed;
-			top:0;
-		}
-	}
-	@include breakpoint(large-phone) {
-		position: fixed;
-		bottom:0;
-		&.stick{
-			position: fixed;
-			bottom:0;
-		}
-	}
-	&.stick{
-		position: fixed;
-		top:0px;
-		right: 0px;
-		left:0;
-		left: 0;
-		
-		
-		 &:before{
-		 	content: "";
-		 	position: fixed;
-		 	top:inherit;
-		 	right: inherit;
-		 	border: 1px solid #000;
-		 
-		 }
-		 background:transparentize(black, 0.5);	
+.animated {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration:1s;
+  		  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  	-moz-animation-fill-mode:both;
+  		  animation-fill-mode: both;
+  
+  -webkit-animation-iteration-count: 2;
+  -moz-animation-iteration-count:2;
+  		  animation-iteration-count: 2;
+}
+.bounce {
+  -webkit-animation-name: bounce;
+  	   -moz-animation-name:bouce;
+  	   -ms-animation-name:bouce;
+  		  animation-name: bounce;
+}
+.come-in {
+  -webkit-transform: translateY(150px);
+  -moz-transform: translateY(150px);
+  transform:translateY(150px);
 
-	}
-	nav{
-		
-		text-align: right;
-		color:white;
-		height: 100%;
-		padding-right: 5%;
-		line-height: 50px;
-
-		a{
-			
-			font-size: 1.5em;
-			padding-right: 10px;
-			padding-left: 10px;
-			
-			&:last-child{
-				border-right: none;
-			}
-		}
-		@include breakpoint(mobile) {
-			text-align: center;
-
-		}
-	}
-	h1{
-		
-		color:white;
-		font-weight: 100;
-		a{
-			font-size: 1em;
-		}
-		span{
-			
-			font-size: .75em;
-			margin-left: 10px;
-		}
-	}
+  -webkit-animation: come-in 2s ease forwards;
+  -moz-animation:come-in 2s ease forwards;
+  animation: come-in 2s ease forwards;
+}
+.come-in:nth-child(odd) {
+  -webkit-animation-duration: 1s;
+  -moz-animation-duration:1s;
+}
+.already-visible {
+  -webkit-transform: translateY(0);
+  -moz-transform:translateY(0);
+  transform:translateY(0);
+  -webkit-animation: none;
+  -moz-animation:none;
+  animation:none;
 }
 .bg{
 	position: absolute;
@@ -264,358 +210,12 @@ header{
 	background-color: $aboutColor;
 	height: 100%;
 	-webkit-transition: all 1s ease;
+	-moz-transition:all 1s ease;
+	transition:all 1s ease;
 	overflow: hidden;
 	.content{
 		width: 80%;
 		margin: 0 auto;
-	}
-}
-
-#about{
-	top:0;
-	bottom:0;
-	padding-top: 80px;
-	background-color: $aboutColor;
-
-	h3{
-		text-align: left;
-		color:white;
-		margin-top: 0;
-		padding-top: 0;
-		font-size: 3.6em;
-		font-weight: normal;
-		padding-left: 2%;
-		padding-right: 2%;
-		width: 70%;
-	}
-	h1{
-		color:white;
-		width: 70%;
-		margin: 50px auto;
-		span{
-			display: block;
-			font-weight: 100;
-		}
-		@include breakpoint(mobile) {
-			font-size: 1.5em;
-			width: 90%;
-		}
-		@include breakpoint(large-phone) {
-			font-size: 1.2em;
-			
-		}
-	}
-	
-	.introduction{
-		text-align: left;
-		font-size: 2.8em;
-		color:white;
-		width: 70%;
-		margin: 0 auto;
-		.def{
-			position: relative;
-			&:hover{
-				cursor: context-menu;
-				&:after{
-					content:'Cat Lover';
-					font-size: 0.5em;
-					position: absolute;
-					width: 160px;
-					padding-left:10px;
-					height:30px;
-					background: $portfolioColor;
-				}
-			}
-		}
-		&.scroll-signifier{
-			margin: 0 auto;
-			text-align: center;
-			position: fixed;
-			bottom:20%;
-			width: 100%;
-			font-size: 1.2em;
-			.icon{
-				display: block;
-			}
-		}
-		&.hidden{
-			display: none;
-		}
-		@include breakpoint(mobile) {
-			font-size: 1.5em;
-			width: 90%;
-		}
-		@include breakpoint(large-phone) {
-			font-size: 1.2em;
-			width: 90%;
-		}
-	}
-	@include breakpoint(mobile) {
-		
-		//width: 90%;
-		padding-top: 20px;
-	}
-	@include breakpoint(large-phone) {
-	
-		//width: 90%;
-		padding-top: 20px;
-	}
-}
-#portfolio{
-	top:100%;
-	background-color: $portfolioColor;
-	@include breakpoint(mobile) {
-	 	height: 170%;
-	}
-	@include breakpoint(large-phone) {
-	 	height: 170%;
-	}
-	.close{
-		position: absolute;
-		display: block;
-		right: 3%;
-		top:80px;
-		z-index: 111;
-		height: 44px;
-		width: 44px;
-		text-align: center;
-		line-height: 44px;
-		display: none;
-		font-weight: 500;
-		font-size: 2em;
-		@include breakpoint(mobile) {
-			top:0px;
-		}
-	}
-	.clone{
-		img{
-			opacity: 0;
-			-webkit-transition: all 1s ease;
-			-webkit-transition-delay: 1s;
-
-		}
-		& > * {
-			opacity: 0;
-			-webkit-transition: all 1s ease;
-			-webkit-transition-delay: 1s;
-
-		}
-
-	}
-	.clone.full{
-	
-		position: absolute;
-		left: 0px !important;
-		top: 0px !important;
-		right: 0px !important;
-		bottom:0px !important;
-		width: 100% !important;
-		height: 700px !important;
-		background-color: $portfolioColor;
-		z-index: 20;
-		-webkit-transition: all 1s ease;
-		padding-top: 50px;
-		padding-left: 1%;
-		
-
-		& > * {
-			opacity: 0;
-			-webkit-transition: all 1s ease;
-			-webkit-transition-delay: 1s;
-
-		}
-		img{
-			display: inline-block;
-			width: 55%;
-	 		top:50px;
-	 		@include breakpoint(mobile) {
-	 			width: 95%;
-	 		}
-
-		}
-		@include breakpoint(mobile) {
-	 		height: 170%;
-	 	}
-	 	#imgFull{
-	 			max-height: 600px;
-	 			overflow: hidden;
-				img{
-					@include breakpoint(mobile) {
-				 		margin:0 auto;
-						width: 100%;
-			 		}
-
-				}
-
-	 			@include breakpoint(mobile) {
-			 		max-height: 250px;
-			 		width: 95%;
-			 		margin:0 auto;
-
-			 	}
-	 	}
-		.expanded-info{
-			
-	 		width: 33%;
-	 		position: absolute;
-	 		top:45px;
-	 		left: 60%;
-	 		right: 0;
-	 		color:white;
-	 		-webkit-transition: all 1s ease;
-	 		dl{
-	 			font-size: 1.3em;
-	 			top:50px;
-	 		}
-	 		dt{
-
-	 			font-weight: 700;		
-	 			padding:2px;
-	 			color: lighten($portfolioColor, 15%);
-	 		}
-	 		
-	 		dd{
-				margin-left: 1%;
-				margin-top: 5px;
-				margin-bottom: 5px;
-				font-weight: 300;
-				color: lighten($portfolioColor, 50%);
-	 		}
-	 		
-			@include breakpoint(mobile) {
-		 		left: 0%;
-		 		top:42%;
-		 		width: 100%;
-		 		dl{
-		 			overflow: hidden;
-		 			width: 95%;
-		 		}
-		 		dt, dd{
-		 			display: inline-block;
-		 			
-		 		}
-		 		dt{
-		 			clear: both;
-		 			float: left;
-		 			width: 25%;
-		 			text-align: right;
-		 			margin-right: 0px;
-		 			height: 44px;
-		 			
-		 		}
-		 		dd{
-		 			float:right;
-		 			width:65%;
-		 			text-align: left;
-		 			margin-left: 7px;
-		 		}
-		 	}
-		 	@include breakpoint(large-phone) {
-		 		left: 0%;
-		 		top:42%;
-		 		width: 100%;
-		 		dl{
-		 			overflow: hidden;
-		 			width: 95%;
-		 		}
-		 		dt, dd{
-		 			display: inline-block;
-		 			
-		 		}
-		 		dt{
-		 			clear: both;
-		 			float: left;
-		 			width: 25%;
-		 			text-align: right;
-		 			margin-right: 0px;
-		 			height: 44px;
-		 			
-		 		}
-		 		dd{
-		 			float:right;
-		 			width:65%;
-		 			text-align: left;
-		 			margin-left: 7px;
-		 		}
-		 	}
-			
-		}
-		  		
-	}
-	.galleryList{
-	
-		margin: 0px auto 0 auto;
-		height: 100%;
-		min-height: 720px;
-		padding-top: 0px;
-		padding: 20px 2%;
-		position: relative;
-		max-width: 1216px;	
-		
-		@include breakpoint(mobile) {
-			width: 100%;
-			padding: 5px 2%;
-		}
-		@include breakpoint(large-phone) {
-			width: 100%;
-			padding: 5px 2%;
-		}
-		.grid-sizer{
-			width: 30.9%;
-			@include breakpoint(mobile) {
-			 	width: 45.8%;
-			}
-			@include breakpoint(large-phone) {
-			 	width: 45.8%;
-			}
-		}
-		li{
-			position: absolute;
-			list-style-type: none;
-			overflow: hidden;
-			display: inline-block;
-			margin: 0;
-			width: 30.9%;
-			margin-top: 10px;
-			@include breakpoint(mobile) {
-				width: 45.8%;
-			}
-			@include breakpoint(large-phone) {
-			 	width: 45.8%;
-			}
-
-		 	.info{
-		 		font-size: 1.2em;
-		 		position: absolute;
-		 		right: 0;
-		 		left: 0;
-		 		bottom:0;
-		 		top:300px;
-		 		text-align: center;
-		 		color:white;
-		 		background: transparentize(black, 0.3);
-		 		z-index: 0;
-		 		padding:50% auto;
-		 		
-		 		dl{
-		 			padding-top: 25%;
-		 		}
-
-		 	}
-		 	img{
-		 		width: 100%;
-		 		-webkit-transition: all 2s ease;
-		 				transition: all 2s ease;		  
-		 	}
-		 	&:hover{
-				cursor:pointer;
-				img{
-					-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-					filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-					opacity: 0.5;
-				}
-			}
-		}
 	}
 }
 #faq{
@@ -634,214 +234,7 @@ header{
 	}
 
 }
-#contact{
-	
-	top: 200%;
-	background-color: $contactColor;
-	@include breakpoint(mobile) {
-	 	top: 270%;
-	}
-	@include breakpoint(large-phone) {
-	 	top: 270%;
-	}
-	
-	form{
-		width: 60%;
-		margin: 70px auto 0 auto;
-		p{
-			margin-top: 15px;
-		}
-		label{
-			width: 30%;
-			display: inline-block;
-			text-align: right;
-			font-weight: 500;
-			font-size: 1.6em;
-			margin-right: 1%;
-			color: darken($contactColor, 20%);
-		}
-		input, textarea{
-			-webkit-appearance: none;
-			border:none;
-			height: 30px;
-			padding:5px;
-			width: 40%;
-			background: lighten($contactColor , 10%);
-			border-radius: 2px;
-			color:white;
-			border-top:1px solid darken($contactColor, 2%);
-		}
-		input[type="submit"]{
-			height: 40px;
-		}
-		textarea{
-			resize:none;
-			height: 200px;
-			width: 40%;
 
-		}
-		input[type="submit"]{
-			background-color: $aboutColor;
-			text-transform: uppercase;
-			font-weight: 700;
-		}
-	}
-	form{
-		
-		@include breakpoint(mobile) {
-			width: 95%;
-			
-			label, input, textarea{
-				width:100%;
-				margin-right: 0;
-			}
-			label{
-				text-align: left;
-				font-size: 1em;
-			}
-			textarea{
-				height: 100px;
-			}
-		}
-		@include breakpoint(large-phone) {
-			width: 95%;
-			
-			label, input, textarea{
-				width:100%;
 
-			}
-			label{
-				text-align: left;
-			}
-		}
-		@include breakpoint(tablet) {
-			width: 80%;
-			margin: 20px auto 0 auto;
-		}
-	}
-}
 
-.come-in {
-  -webkit-transform: translateY(150px);
-  -webkit-animation: come-in 2s ease forwards;
-}
-.come-in:nth-child(odd) {
-  -webkit-animation-duration: 1s;
-}
-.already-visible {
-  -webkit-transform: translateY(0);
-  -webkit-animation: none;
-}
-#sm{
-	
-	text-align: center;
-	width: 5%;
-	@include breakpoint(mobile) {
-		
-		margin: 0 auto;			
-	}
-	li{
-		padding-top: 5px;
-		min-width: 44px;
-		height: 44px;
-		
-		a{
-			text-align: center;
-			display: block;
-			width: 100%;
-			font-size: 1.5em;
-			line-height: 44px;
-		}	
-	
-		@include breakpoint(mobile) {
-			display: inline-block;
-			margin: 30% auto 0 auto;
-			
-		}
-		@include breakpoint(large-phone) {
-			display: inline-block;
-			margin: 50% auto 0 auto;
-			
-		}
-	}
-	&.hidden{
-		display: none;
-	}
-	@include breakpoint(mobile) {
-		
-		width: 90%;
-			
-	}
-	@include breakpoint(large-phone) {
-		
-		width: 90%;
-		
-	}
-}
-
-#cat-stack{
-	top:300%;
-	div{
-		position:relative;
-		top:0px;
-		left:0;
-		right:0;
-		bottom:0;
-		height:700px;
-		.img-link{
-		    margin: 20px 20px 20px 20px;
-		    float:left;
-		    width:300px;
-		    height:200px;
-		    -webkit-transition:all 2s ease;
-		    img{
-		      display:block;
-		      border: 4px solid white;
-			}
-		}
-		@for $i from 1 through 3 {
-          &.item-#{$i} {
-            display:block;
-            margin: 20px 20px 20px 20px;
-            position:relative;
-            width: 300px;
-            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-            //position:absolute;
-            background: #fff;
-           // z-index:-1 ;
-            top:0;
-            left:0;
-            right:0;
-            bottom:0;
-           
-            -webkit-transform: scaleX(0.4) scaleY(0.4) rotate(2deg * $i);
-            &:nth-child(even){
-              -webkit-transform: scaleX(0.4) scaleY(0.4)  rotate(2deg * -$i)
-            }
-          }
-      	}
-		&.anim{
-	        -webkit-animation: animationFrames ease 1s;
-	        -webkit-animation-iteration-count: 1;
-	       
-	        @for $i from 0 through 2 {
-	          &.item-#{$i+1} { 
-	            left: 300px * $i;
-	            -webkit-transform: rotate(0deg);
-	            border:0px;
-	            &.full{
-	              position:absolute;
-	              top:0;
-	              bottom:0;
-	              right:0;
-	              z-index:4;
-	              background-color: white;
-	              height:100%;
-	              width:100%;
-	            }
-	          }
-	        }   
-    	}
-	}
-}
 

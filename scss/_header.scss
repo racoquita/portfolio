@@ -1,0 +1,82 @@
+header{
+	
+	position: absolute;
+	right: 5%;
+	top:93.2%;
+	height: 50px;
+	left: 0;
+	right: 0;
+	z-index: 222;
+	@include breakpoint(mobile) {
+		display: none;
+		position: fixed;
+		top:0;
+		&.stick{
+			position: fixed;
+			top:0;
+		}
+	}
+	@include breakpoint(large-phone) {
+		position: fixed;
+		bottom:0;
+		&.stick{
+			position: fixed;
+			bottom:0;
+		}
+	}
+	&.stick{
+		position: fixed;
+		top:0px;
+		right: 0px;
+		left:0;
+		left: 0;
+		
+		
+		 &:before{
+		 	content: "";
+		 	position: fixed;
+		 	top:inherit;
+		 	right: inherit;
+		 	border: 1px solid #000;
+		 
+		 }
+		 background:transparentize(black, 0.5);	
+
+	}
+	nav{
+		
+		text-align: right;
+		color:white;
+		height: 100%;
+		padding-right: 5%;
+		line-height: 50px;
+
+		a{
+			
+			font-size: 1.5em;
+			padding-right: 10px;
+			padding-left: 10px;
+			
+			&:last-child{
+				border-right: none;
+			}
+		}
+		@include breakpoint(mobile) {
+			text-align: center;
+
+		}
+	}
+	h1{
+		
+		color:white;
+		font-weight: 100;
+		a{
+			font-size: 1em;
+		}
+		span{
+			
+			font-size: .75em;
+			margin-left: 10px;
+		}
+	}
+}

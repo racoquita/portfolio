@@ -1,0 +1,136 @@
+#about{
+	top:0;
+	bottom:0;
+	padding-top: 80px;
+	background-color: $aboutColor;
+
+	h3{
+		text-align: left;
+		color:white;
+		margin-top: 0;
+		padding-top: 0;
+		font-size: 3.6em;
+		font-weight: normal;
+		padding-left: 2%;
+		padding-right: 2%;
+		width: 70%;
+	}
+	h1{
+		color:white;
+		width: 70%;
+		margin: 50px auto;
+		span{
+			display: block;
+			font-weight: 100;
+		}
+		@include breakpoint(mobile) {
+			font-size: 1.5em;
+			width: 90%;
+		}
+		@include breakpoint(large-phone) {
+			font-size: 1.2em;
+			
+		}
+	}
+	
+	.introduction{
+		text-align: left;
+		font-size: 2.8em;
+		color:white;
+		width: 70%;
+		margin: 0 auto;
+		.def{
+			position: relative;
+			&:hover{
+				cursor: context-menu;
+				&:after{
+					content:'Cat Lover';
+					font-size: 0.5em;
+					position: absolute;
+					width: 160px;
+					padding-left:10px;
+					height:30px;
+					background: $portfolioColor;
+				}
+			}
+		}
+		&.scroll-signifier{
+			margin: 0 auto;
+			text-align: center;
+			position: fixed;
+			bottom:20%;
+			width: 100%;
+			font-size: 1.2em;
+			.icon{
+				display: block;
+			}
+		}
+		&.hidden{
+			display: none;
+		}
+		@include breakpoint(mobile) {
+			font-size: 1.5em;
+			width: 90%;
+		}
+		@include breakpoint(large-phone) {
+			font-size: 1.2em;
+			width: 90%;
+		}
+	}
+	@include breakpoint(mobile) {
+		
+		//width: 90%;
+		padding-top: 20px;
+	}
+	@include breakpoint(large-phone) {
+	
+		//width: 90%;
+		padding-top: 20px;
+	}
+}
+#sm{
+	
+	text-align: center;
+	width: 5%;
+	@include breakpoint(mobile) {
+		
+		margin: 0 auto;			
+	}
+	li{
+		padding-top: 5px;
+		min-width: 44px;
+		height: 44px;
+		
+		a{
+			text-align: center;
+			display: block;
+			width: 100%;
+			font-size: 1.5em;
+			line-height: 44px;
+		}	
+	
+		@include breakpoint(mobile) {
+			display: inline-block;
+			margin: 30% auto 0 auto;
+			
+		}
+		@include breakpoint(large-phone) {
+			display: inline-block;
+			margin: 50% auto 0 auto;
+			
+		}
+	}
+	&.hidden{
+		display: none;
+	}
+	@include breakpoint(mobile) {
+		
+		width: 90%;
+			
+	}
+	@include breakpoint(large-phone) {
+		
+		width: 90%;
+		
+	}
+}

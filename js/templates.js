@@ -19,11 +19,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1, helper;
-  buffer += "\n        <img src=\"img/";
+  buffer += "\n        <li><img src=\"img/";
   if (helper = helpers.image) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.image); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "\" alt=\"\"/>\n    ";
+    + "\" alt=\"\"/></li>\n    ";
   return buffer;
   }
 
@@ -75,13 +75,13 @@ function program9(depth0,data) {
   return buffer;
   }
 
-  buffer += "\n<figure id=\"imgFull\">\n    ";
+  buffer += "\n<figure id=\"imgFull\">\n    <ul>\n    ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.images), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n    ";
   stack1 = helpers['if'].call(depth0, (depth0 && depth0.caption), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n   \n</figure>\n\n<div class=\"expanded-info\">\n<dl>\n    <dt>Category</dt>\n    <dd><span class=\"icon\"></span> "
+  buffer += "\n    </ul>\n    <a href=\"#\" class=\"next\">Next</a>\n</figure>\n\n<div class=\"expanded-info\">\n<dl>\n    <dt>Category</dt>\n    <dd><span class=\"icon\"></span> "
     + escapeExpression(((stack1 = (depth0 && depth0.category)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</dd>\n    <dd>"
     + escapeExpression(((stack1 = (depth0 && depth0.platform)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))

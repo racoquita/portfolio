@@ -1,12 +1,14 @@
 
 <figure id="imgFull">
+    <ul>
     {{#each this.images}}
-        <img src="img/{{image}}" alt=""/>
+        <li><img src="img/{{image}}" alt=""/></li>
     {{/each}}
     {{#if caption}}
          <figcaption>{{caption}}</figcaption>
     {{/if}}
-   
+    </ul>
+    <a href="#" class="next">Next</a>
 </figure>
 
 <div class="expanded-info">

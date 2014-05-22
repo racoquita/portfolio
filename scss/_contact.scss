@@ -1,0 +1,86 @@
+#contact{
+	
+	top: 200%;
+	background-color: $contactColor;
+	@include breakpoint(mobile) {
+	 	top: 270%;
+	}
+	@include breakpoint(large-phone) {
+	 	top: 270%;
+	}
+	
+	form{
+		width: 60%;
+		margin: 70px auto 0 auto;
+		p{
+			margin-top: 15px;
+		}
+		label{
+			width: 30%;
+			display: inline-block;
+			text-align: right;
+			font-weight: 500;
+			font-size: 1.6em;
+			margin-right: 1%;
+			color: darken($contactColor, 20%);
+		}
+		input, textarea{
+			-webkit-appearance: none;
+			border:none;
+			height: 30px;
+			padding:5px;
+			width: 40%;
+			background: lighten($contactColor , 10%);
+			border-radius: 2px;
+			color:white;
+			border-top:1px solid darken($contactColor, 2%);
+		}
+		input[type="submit"]{
+			height: 40px;
+		}
+		textarea{
+			resize:none;
+			height: 200px;
+			width: 40%;
+
+		}
+		input[type="submit"]{
+			background-color: $aboutColor;
+			text-transform: uppercase;
+			font-weight: 700;
+		}
+	}
+	form{
+		
+		@include breakpoint(mobile) {
+			width: 95%;
+			
+			label, input, textarea{
+				width:100%;
+				margin-right: 0;
+			}
+			label{
+				text-align: left;
+				font-size: 1em;
+			}
+			textarea{
+				height: 100px;
+			}
+		}
+		@include breakpoint(large-phone) {
+			width: 95%;
+			
+			label, input, textarea{
+				width:100%;
+
+			}
+			label{
+				text-align: left;
+			}
+		}
+		@include breakpoint(tablet) {
+			width: 80%;
+			margin: 20px auto 0 auto;
+		}
+	}
+}
