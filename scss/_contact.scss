@@ -1,21 +1,15 @@
-#contact{
-	
-	top: 200%;
+#contact {
 	background-color: $contactColor;
-	@include breakpoint(mobile) {
-	 	//top: 270%;
-	}
-	@include breakpoint(large-phone) {
-	 	//top: 270%;
-	}
 	
-	form{
+	form {
 		width: 60%;
-		margin: 70px auto 0 auto;
-		p{
+		margin: 0 auto;
+		padding-top: 70px;
+
+		p {
 			margin-top: 15px;
 		}
-		label{
+		label {
 			width: 30%;
 			display: inline-block;
 			text-align: right;
@@ -24,7 +18,7 @@
 			margin-right: 1%;
 			color: darken($contactColor, 20%);
 		}
-		input, textarea{
+		input, textarea {
 			-webkit-appearance: none;
 			border:none;
 			height: 30px;
@@ -35,52 +29,53 @@
 			color:white;
 			border-top:1px solid darken($contactColor, 2%);
 		}
-		input[type="submit"]{
+		input[type="submit"] {
 			height: 40px;
 		}
-		textarea{
+		textarea {
 			resize:none;
 			height: 200px;
 			width: 40%;
 
 		}
-		input[type="submit"]{
+		input[type="submit"] {
 			background-color: $aboutColor;
 			text-transform: uppercase;
 			font-weight: 700;
 		}
 	}
-	form{
+	form {
 		
 		@include breakpoint(mobile) {
 			width: 95%;
 			
-			label, input, textarea{
+			label, input, textarea {
 				width:100%;
 				margin-right: 0;
 			}
-			label{
+			label {
 				text-align: left;
 				font-size: 1em;
 			}
-			textarea{
+			textarea {
 				height: 100px;
 			}
 		}
 		@include breakpoint(large-phone) {
 			width: 95%;
 			
-			label, input, textarea{
+			label, input, textarea {
 				width:100%;
 
 			}
-			label{
+			label {
 				text-align: left;
 			}
 		}
 		@include breakpoint(tablet) {
 			width: 80%;
-			margin: 20px auto 0 auto;
+			margin: 0 auto;
+			padding-top: 20px;
 		}
 	}
 }

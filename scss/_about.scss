@@ -1,10 +1,12 @@
-#about{
+#about {
 	top:0;
 	bottom:0;
 	padding-top: 80px;
 	background-color: $aboutColor;
+	margin: 0;
+	padding: 0;
 
-	h3{
+	h3 {
 		text-align: left;
 		color:white;
 		margin-top: 0;
@@ -15,11 +17,13 @@
 		padding-right: 2%;
 		width: 70%;
 	}
-	h1{
+	h1 {
 		color:white;
 		width: 70%;
-		margin: 50px auto;
-		span{
+		margin: 0 auto;
+		padding-top: 50px;
+		
+		span {
 			display: block;
 			font-weight: 100;
 		}
@@ -33,17 +37,17 @@
 		}
 	}
 	
-	.introduction{
+	.introduction {
 		text-align: left;
 		font-size: 2.8em;
 		color:white;
 		width: 70%;
 		margin: 0 auto;
-		.def{
+		.def {
 			position: relative;
-			&:hover{
+			&:hover {
 				cursor: context-menu;
-				&:after{
+				&:after {
 					content:'Cat Lover';
 					font-size: 0.5em;
 					position: absolute;
@@ -54,18 +58,18 @@
 				}
 			}
 		}
-		&.scroll-signifier{
+		&.scroll-signifier {
 			margin: 0 auto;
 			text-align: center;
 			position: fixed;
 			bottom:20%;
 			width: 100%;
 			font-size: 1.2em;
-			.icon{
+			.icon {
 				display: block;
 			}
 		}
-		&.hidden{
+		&.hidden {
 			display: none;
 		}
 		@include breakpoint(mobile) {
@@ -88,7 +92,7 @@
 		padding-top: 20px;
 	}
 }
-#sm{
+#sm {
 	
 	text-align: center;
 	width: 5%;
@@ -96,12 +100,12 @@
 		
 		margin: 0 auto;			
 	}
-	li{
+	li {
 		padding-top: 5px;
 		min-width: 44px;
 		height: 44px;
 		
-		a{
+		a {
 			text-align: center;
 			display: block;
 			width: 100%;
@@ -120,7 +124,7 @@
 			
 		}
 	}
-	&.hidden{
+	&.hidden {
 		display: none;
 	}
 	@include breakpoint(mobile) {

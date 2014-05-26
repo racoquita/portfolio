@@ -1,3 +1,4 @@
+@import 'normalize';
 @import 'vars';
 @import 'fonts';
 @import 'mixins';
@@ -6,145 +7,78 @@
 @import 'contact';
 @import 'gallery';
 
-@-webkit-keyframes animationFrames{
-  0% {
-    left:0px;
-    top:0px;
-    opacity:1;
-    transform: rotate(-1deg) scaleX(0.5) scaleY(0.5);
-
-  }
-  52% {
-    //left:116px;
-    top:-20px;
-  }
-  100% {
-   // left:200px;
-    top:0px;
-    opacity:1;
-    transform:  rotate(0deg) scaleX(1) scaleY(1) ;
-  }
-}
-@-webkit-keyframes come-in {
-  to { -webkit-transform: translateY(0); }
-}
-@-moz-keyframes come-in {
-  to { -moz-transform: translateY(0); }
-}
-@keyframes come-in {
-  to { transform: translateY(0); }
-}
-@-webkit-keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  40% {
-    -webkit-transform: translateY(-30px);
-    transform: translateY(-30px);
-  }
-
-  60% {
-    -webkit-transform: translateY(-15px);
-    transform: translateY(-15px);
-  }
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    -webkit-transform: translateY(0);
-    	-ms-transform: translateY(0);
-    		transform: translateY(0);
-  }
-  40% {
-    -webkit-transform: translateY(-30px);
-    	-ms-transform: translateY(-30px);
-    		transform: translateY(-30px);
-  }
-
-  60% {
-    -webkit-transform: translateY(-15px);
-    	-ms-transform: translateY(-15px);
-    		transform: translateY(-15px);
-  }
-}
-*{
-	-webkit-box-sizing:border-box;
+body {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
 	margin: 0;
-	padding:0;
-}
-::-webkit-input-placeholder {
-   color: white;
-   font-family: 'brandon-grotesque';
-}
-
-:-moz-placeholder { /* Firefox 18- */
-   color: white;  
-}
-
-::-moz-placeholder {  /* Firefox 19+ */
-   color: white;  
-}
-:-ms-input-placeholder {  
-   color: white;  
-}
-body{
+	overflow: hidden;
 	font-family: 'brandon-grotesque', arial, helvetica, sans-serif;
 	font-size: 62.5%;
 	font-weight: 300;
-	min-width: 320px;
 }
-html.touch{
-	
-	body{
-		overflow-y:scroll;
-		-webkit-overflow-scrolling: touch;
-	}
-	#wrapper{
-		position: absolute;
-		top:0;
-		bottom:0;
-		left:0;
-		right: 0;
-		overflow-y:scroll;
-		@include breakpoint(mobile) {
-			-webkit-overflow-scrolling: touch;
+#scroll {
+	width: 100%;
+	height: 100%;
+}
+ul.wrapper {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+
+	li.bg {
+		margin: 0;
+		padding: 0;
+		position: relative;
+		height: 100%;
+
+		.bg {
+			position: absolute;
+			right: 0;
+			left: 0;
+			height: 100%;
+			overflow: hidden;
+			background-color: $aboutColor;
+
+			@include prefix(transition, all 1s ease);
+
+			.content {
+				width: 80%;
+				margin: 0 auto;
+			}
 		}
-		@include breakpoint(large-phone) {
-			-webkit-overflow-scrolling: touch;
-		}
-	
 	}
 }
-li{
+li {
 	list-style-type: none;
 }
-a{
+a {
 	color: white;
 	text-decoration: none;
 	font-size: 1.2em;
-	&.active{
+
+	&.active {
 		color: $yellowMustard;
 	}
 }
-p, li{
-	font-size: 1.4em;
+p, li {
 	margin: 0;
 	padding: 0;
 }
-img{
+img {
 	display: block;
 	max-width: 100%;
 }
-h2{
-	
+h2 {
 	width: 100%;
 	text-align:center;
 	margin-top: 50px;
 	font-size: 5em;
 	color:white;
 	margin-bottom: 0;
+
 	@include breakpoint(mobile) {
 		font-size: 2em;
 		margin-top: 20px;
@@ -156,71 +90,10 @@ h2{
 		display: none;
 	}
 }
-.icon{
+.icon {
 	font-family: 'icomoon';
 	font-weight: 100;
 	font-size: 1.2em;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-.animated {
-  -webkit-animation-duration: 1s;
-  -moz-animation-duration:1s;
-  		  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  	-moz-animation-fill-mode:both;
-  		  animation-fill-mode: both;
-  
-  -webkit-animation-iteration-count: 2;
-  -moz-animation-iteration-count:2;
-  		  animation-iteration-count: 2;
-}
-.bounce {
-  	@include prefix(animation-name, bounce);
-}
-.come-in {
-	@include prefix(transform, translateY(150px));
-  	@include prefix(animation, come-in 2s ease forwards);
-}
-.come-in:nth-child(odd) {
-  @include prefix(animation-duration, 1s);
-}
-.already-visible {
- 
-  @include prefix(transform, translateY(0));
-  @include prefix(animation, none);
-
-}
-.bg{
-	position: absolute;
-	right: 0;
-	left: 0;
-	height: 100%;
-	overflow: hidden;
-	background-color: $aboutColor;
-	@include prefix(transition, all 1s ease);	
-	.content{
-		width: 80%;
-		margin: 0 auto;
-	}
-}
-#faq{
-	top:200%;
-	background-color: $faqColor;
-	article{
-		font-size: 1em;
-		&:hover{
-			background-color: darken($faqColor, 5%);
-		}
-		color: $portfolioColor;
-	}
-	h3{
-		color: $portfolioColor;
-		font-size: 1.8em;
-	}
-
-}
-
-
-
-
