@@ -81,7 +81,7 @@ function program9(depth0,data) {
   buffer += "\n    ";
   stack1 = helpers['if'].call(depth0, (depth0 && depth0.caption), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    </ul>\n    <a href=\"#\" class=\"next\">Next</a>\n</figure>\n\n<div class=\"expanded-info\">\n<dl>\n    <dt>Category</dt>\n    <dd><span class=\"icon\"></span> "
+  buffer += "\n    </ul>\n</figure>\n\n<ul id=\"slider-controls\">\n\n    <li><a href=\"#\" class=\"prev\">Previous</a></li>\n    <li><a href=\"#\" class=\"next\">Next</a></li>\n</ul>\n\n<div class=\"expanded-info\">\n<dl>\n    <dt>Category</dt>\n    <dd><span class=\"icon\"></span> "
     + escapeExpression(((stack1 = (depth0 && depth0.category)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</dd>\n    <dd>"
     + escapeExpression(((stack1 = (depth0 && depth0.platform)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
