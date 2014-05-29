@@ -120,51 +120,80 @@ function onItemHover () {
 	}).on('mouseleave', function () {
 		
 		info.removeClass('show');
-		return false	
+		return false;
 	});
 }
 function getPortfolioData () {
-
-	$.getJSON('http://localhost/14Personal/scrolling/json/data.json', function(res){
+	$.getJSON('json/data.json', function(res){
 		works = res;
-
 	});
-	return works
+	return works;
 }
 function itemClickHandler () {
-	var selLi;
-	var clone;
-	var closeLink = $('.close');
-	
+	var clone = $('<div class="contain"></div>');
+
 	galleryItem.on('click',function(e) {
-		selLi = $(e.target).closest('li');
-		var selected = selLi.find('.contain').data('name');
-		var data = works[selected];
-		clone = $('<div class="contain"></div>');
-		
+		var selLi = $(e.target).closest('li');
+		var selected = selLi.find('.contain').data('name');	
+
 		clone.addClass('clone').css({
 			top: selLi.position().top,
 			left:selLi.position().left,
 			width:selLi.width(),
 			height:selLi.height()
 		});
-		console.log(works)
-		$(clone).html(raco.selectedWork(data));
-		$('#portfolio').append(clone);
-		setTimeout(function() {
-			$(clone).addClass('full');
 
-			setTimeout(function(){
-				$(clone).find('img').css('opacity', 1);
-				$(clone).find('.expanded-info').css('opacity', 1);
-				$(clone).find('dl').css('opacity', 1);
-				$(clone).children().css('opacity', 1);
-			}, 10);
+		$('#portfolio').append(clone);
+
+		appendWorkData(selected);
+	});
+}
+function appendWorkData(name) {
+	var clone = $('.clone');
+	var data = works[name];
+	var closeLink = $('.close');
+
+	clone.html(raco.selectedWork(data));
+	
+	setTimeout(function() {
+		$(clone).addClass('full');
+
+		setTimeout(function(){
+			$(clone).find('img').css('opacity', 1);
+			$(clone).find('.expanded-info').css('opacity', 1);
+			$(clone).find('dl').css('opacity', 1);
+			$(clone).children().css('opacity', 1);
+
+			setWorkEvents(data);
 		}, 10);
-		closeLink.show().on('click', function(e) {
-			$(this).hide();
-			clone.remove();
-			return false;
-		});
+	}, 10);
+
+	closeLink.show().on('click', function(e) {
+		$(this).hide();
+		clone.remove();
+		return false;
+	});
+}
+function setWorkEvents(data) {
+	var num = data.images.length;
+	var counter = 1;
+
+	$('.clone .next').on('click', function(e){
+		e.preventDefault();
+
+		if(num > 1) {
+			$('#imgFull img').attr('src', 'img/' + data.images[counter].image);
+			counter < data.images.length - 1 ? counter++ : counter = 0;
+		}
+		
+	});
+
+	$('.clone .prev').on('click', function(e){
+		e.preventDefault();
+		
+		if(num > 1) {
+			$('#imgFull img').attr('src', 'img/' + data.images[counter].image);
+			counter > 0 ? counter-- : counter = num - 1;
+		}
 	});
 }

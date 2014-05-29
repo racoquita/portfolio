@@ -1,12 +1,9 @@
 <figure id="imgFull">
-    <ul>
-    {{#each this.images}}
-        <li><img src="img/{{image}}" alt=""/></li>
-    {{/each}}
-    {{#if caption}}
+    <img src="img/{{images.0.image}}" alt=""/>
+
+   {{#if caption}}
          <figcaption>{{caption}}</figcaption>
     {{/if}}
-    </ul>
 </figure>
 
 <ul id="slider-controls">
