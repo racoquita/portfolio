@@ -5,6 +5,7 @@ var startPos = 0;
 var prevPos = 0;
 var fromClick = false;
 var galleryItem;
+var works = getPortfolioData();
 
 $(document).ready(function(){
 	galleryItem = $('#gallery li');
@@ -13,6 +14,8 @@ $(document).ready(function(){
 	initGalleryScroll();
 	handleNav();
 	onItemHover();
+	itemClickHandler();
+	
 });
 
 var initPackery = function () {	 
@@ -118,5 +121,50 @@ function onItemHover () {
 		
 		info.removeClass('show');
 		return false	
+	});
+}
+function getPortfolioData () {
+
+	$.getJSON('http://localhost/14Personal/scrolling/json/data.json', function(res){
+		works = res;
+
+	});
+	return works
+}
+function itemClickHandler () {
+	var selLi;
+	var clone;
+	var closeLink = $('.close');
+	
+	galleryItem.on('click',function(e) {
+		selLi = $(e.target).closest('li');
+		var selected = selLi.find('.contain').data('name');
+		var data = works[selected];
+		clone = $('<div class="contain"></div>');
+		
+		clone.addClass('clone').css({
+			top: selLi.position().top,
+			left:selLi.position().left,
+			width:selLi.width(),
+			height:selLi.height()
+		});
+		console.log(works)
+		$(clone).html(raco.selectedWork(data));
+		$('#portfolio').append(clone);
+		setTimeout(function() {
+			$(clone).addClass('full');
+
+			setTimeout(function(){
+				$(clone).find('img').css('opacity', 1);
+				$(clone).find('.expanded-info').css('opacity', 1);
+				$(clone).find('dl').css('opacity', 1);
+				$(clone).children().css('opacity', 1);
+			}, 10);
+		}, 10);
+		closeLink.show().on('click', function(e) {
+			$(this).hide();
+			clone.remove();
+			return false;
+		});
 	});
 }
