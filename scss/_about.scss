@@ -62,9 +62,10 @@
 			margin: 0 auto;
 			text-align: center;
 			position: fixed;
-			bottom:20%;
+			top:30%;
 			width: 100%;
 			font-size: 1.2em;
+			z-index: 8;
 			.icon {
 				display: block;
 			}

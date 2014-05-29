@@ -1,8 +1,29 @@
+$inputHeight:40px;
+
+
+
 #contact {
 	background-color: $contactColor;
-	
+	font-size: 1rem;
+	::-webkit-input-placeholder {
+	   color: lighten($contactColor, 30%);  
+	   font-size: 1em;
+	   text-transform: uppercase;
+	   margin: 5px;
+	   font-family: 'brandon-grotesque';
+	}
+	:-moz-placeholder { /* Firefox 18- */
+	   color: lighten($contactColor, 10%);  
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   color: white;  
+	}
+	:-ms-input-placeholder {  
+	   color: white;  
+	}
 	form {
-		width: 60%;
+		width: 80%;
 		margin: 0 auto;
 		padding-top: 70px;
 
@@ -14,23 +35,34 @@
 			display: inline-block;
 			text-align: right;
 			font-weight: 500;
-			font-size: 1.6em;
+			font-size: 1.2em;
+			height: $inputHeight;
+			line-height: $inputHeight;
+			//text-transform: uppercase;
 			margin-right: 1%;
-			color: darken($contactColor, 20%);
+			color: darken($contactColor, 10%);
 		}
 		input, textarea {
 			-webkit-appearance: none;
 			border:none;
-			height: 30px;
-			padding:5px;
+			height: 40px;
+			padding: 0;
+			padding-left:15px;
 			width: 40%;
-			background: lighten($contactColor , 10%);
+			//background: lighten($contactColor , 5%);
+			
+			background: lighten($contactColor , 4%);
 			border-radius: 2px;
 			color:white;
 			border-top:1px solid darken($contactColor, 2%);
+			
+		}
+		textarea{
+			padding-top: 10px;
 		}
 		input[type="submit"] {
-			height: 40px;
+			height: $inputHeight+10;
+			width:41.5%;
 		}
 		textarea {
 			resize:none;
