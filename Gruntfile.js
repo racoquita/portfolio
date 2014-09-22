@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-contrib-compass');
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -18,10 +19,25 @@ module.exports = function(grunt) {
         } 
       }
     },
+    compass: {
+      build: {
+        options: {
+          sassDir: 'scss',
+          cssDir: 'css',
+          outputStyle: 'compact',
+          force: true,
+          noLineComments: true
+        }
+      }
+    },
     watch:{
       hbs:{
         files: 'hbs/**/*.hbs',
         tasks: ['handlebars:dev']
+      },
+      scss: {
+        files: 'scss/**/*.scss',
+        tasks: ['compass:build']
       }
     }
 
@@ -29,6 +45,6 @@ module.exports = function(grunt) {
   });
 
   // Default task(s).
-  grunt.registerTask('default', ['handlebars:dev', 'watch']);
+  grunt.registerTask('default', ['handlebars:dev','compass:build', 'watch']);
 
 };

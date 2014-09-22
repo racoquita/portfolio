@@ -2,7 +2,7 @@
 	background-color: $portfolioColor;
 
 	@include breakpoint(mobile) {
-	 	//height: 170%;
+	 	//height: 170%; 
 	}
 	@include breakpoint(large-phone) {
 	 	//height: 170%;
