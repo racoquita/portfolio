@@ -22,7 +22,7 @@ var initPackery = function () {
 	$('#gallery').packery({
 		columnWidth: '.grid-sizer',
 		isHorizontal: true,
-		gutter:5,
+		gutter:0,
 		itemSelector: '.item'
 	});
 }

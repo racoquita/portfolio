@@ -203,6 +203,7 @@
 		position: relative;
 		// max-width: 1216px;
 		cursor: ew-resize;
+		overflow-x:scroll;
 		
 		@include breakpoint(mobile) {
 			width: 100%;
@@ -213,28 +214,28 @@
 			padding: 5px 2%;
 		}
 		.grid-sizer{
-			@include breakpoint(mobile) {
-			 	width: 45.8%;
-			}
-			@include breakpoint(large-phone) {
-			 	width: 45.8%;
-			}
+			// @include breakpoint(mobile) {
+			//  	width: 45.8%;
+			// }
+			// @include breakpoint(large-phone) {
+			//  	width: 45.8%;
+			// }
 		}
 		li{
 			list-style-type: none;
 			display: inline-block;
 			position: absolute;
 			overflow: hidden;
-			margin: 5px 0 0 0;
+			margin: 0;
 			width: 300px;
 			height: 200px;
 
-			@include breakpoint(mobile) {
-				width: 45.8%;
-			}
-			@include breakpoint(large-phone) {
-			 	width: 45.8%;
-			}
+			// @include breakpoint(mobile) {
+			// 	width: 45.8%;
+			// }
+			// @include breakpoint(large-phone) {
+			//  	width: 45.8%;
+			// }
 		 	.info{
 		 		font-size: 1.2em;
 		 		position: absolute;
@@ -265,9 +266,11 @@
 		 	&:hover{
 				cursor:pointer;
 				img{
-					-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
-					filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
-					opacity: 0.5;
+					//-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+					//filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=50);
+					-webkit-filter: blur(5px);
+					filter: blur(20px);
+					//opacity: 0.5;
 				}
 			}
 		}
