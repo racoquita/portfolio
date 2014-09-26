@@ -1,5 +1,23 @@
 @font-face { font-family: 'icomoon'; src: url("../icomoon.eot?j2wapk"); src: url("../fonts/icomoon.eot?#iefixj2wapk") format("embedded-opentype"), url("../fonts/icomoon.woff?j2wapk") format("woff"), url("../fonts/icomoon.ttf?j2wapk") format("truetype"), url("../fonts/icomoon.svg?j2wapk#icomoon") format("svg"); font-weight: 100; font-style: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
+@-webkit-keyframes animationFrames { 0% { left: 0px; top: 0px; opacity: 1; transform: rotate(-1deg) scaleX(0.5) scaleY(0.5); }
+  52% { top: -20px; }
+  100% { top: 0px; opacity: 1; transform: rotate(0deg) scaleX(1) scaleY(1); } }
+
+@-webkit-keyframes come-in { to { -webkit-transform: translateY(0); } }
+
+@-moz-keyframes come-in { to { -moz-transform: translateY(0); } }
+
+@keyframes come-in { to { transform: translateY(0); } }
+
+@-webkit-keyframes bounce { 0%, 20%, 50%, 80%, 100% { -webkit-transform: translateY(0); transform: translateY(0); }
+  40% { -webkit-transform: translateY(-30px); transform: translateY(-30px); }
+  60% { -webkit-transform: translateY(-15px); transform: translateY(-15px); } }
+
+@keyframes bounce { 0%, 20%, 50%, 80%, 100% { -webkit-transform: translateY(0); -ms-transform: translateY(0); transform: translateY(0); }
+  40% { -webkit-transform: translateY(-30px); -ms-transform: translateY(-30px); transform: translateY(-30px); }
+  60% { -webkit-transform: translateY(-15px); -ms-transform: translateY(-15px); transform: translateY(-15px); } }
+
 header { position: absolute; right: 5%; top: 93.2%; height: 50px; width: 100%; left: 0; right: 0; z-index: 222; -webkit-transition: all 1s ease; -moz-transition: all 1s ease; -ms-transition: all 1s ease; -o-transition: all 1s ease; transition: all 1s ease; }
 header.clone { position: absolute; top: 0; overflow: hidden; background-color: rgba(0, 0, 0, 0.5); }
 header nav { text-align: right; color: white; height: 100%; padding-right: 5%; line-height: 50px; }

@@ -26,7 +26,9 @@ var initPackery = function () {
 		itemSelector: '.item'
 	});
 }
-
+function init (argument) {
+	$('#sm').addClass('come-in');
+}
 function initScroller() {
 	$('#scroll, ul.wrapper li.bg').height($(window).height());
 	$('.wrapper').height($(window).height() * 3);

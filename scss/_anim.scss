@@ -1,0 +1,63 @@
+@-webkit-keyframes animationFrames{
+  0% {
+    left:0px;
+    top:0px;
+    opacity:1;
+    transform: rotate(-1deg) scaleX(0.5) scaleY(0.5);
+
+  }
+  52% {
+    //left:116px;
+    top:-20px;
+  }
+  100% {
+   // left:200px;
+    top:0px;
+    opacity:1;
+    transform:  rotate(0deg) scaleX(1) scaleY(1) ;
+  }
+}
+@-webkit-keyframes come-in {
+  to { -webkit-transform: translateY(0); }
+}
+@-moz-keyframes come-in {
+  to { -moz-transform: translateY(0); }
+}
+@keyframes come-in {
+  to { transform: translateY(0); }
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    	-ms-transform: translateY(0);
+    		transform: translateY(0);
+  }
+  40% {
+    -webkit-transform: translateY(-30px);
+    	-ms-transform: translateY(-30px);
+    		transform: translateY(-30px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-15px);
+    	-ms-transform: translateY(-15px);
+    		transform: translateY(-15px);
+  }
+}
