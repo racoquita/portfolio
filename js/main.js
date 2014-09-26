@@ -15,7 +15,7 @@ $(document).ready(function(){
 	handleNav();
 	onItemHover();
 	itemClickHandler();
-	
+	init();
 });
 
 var initPackery = function () {	 
@@ -26,8 +26,9 @@ var initPackery = function () {
 		itemSelector: '.item'
 	});
 }
-function init (argument) {
+function init () {
 	$('#sm').addClass('come-in');
+	$('p.introduction').addClass('animated bounce');
 }
 function initScroller() {
 	$('#scroll, ul.wrapper li.bg').height($(window).height());
