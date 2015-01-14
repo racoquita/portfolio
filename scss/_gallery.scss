@@ -1,17 +1,15 @@
 #portfolio {
 	background-color: $portfolioColor;
 
-	@include breakpoint(mobile) {
+	@include respond-to(mobile) {
 	 	//height: 170%; 
 	}
-	@include breakpoint(large-phone) {
-	 	//height: 170%;
-	}
+	
 	.close{
 		position: absolute;
 		display: block;
 		right: 3%;
-		top:80px;
+		top:69px;
 		z-index: 111;
 		height: 44px;
 		width: 44px;
@@ -19,8 +17,8 @@
 		line-height: 44px;
 		display: none;
 		font-weight: 500;
-		font-size: 2em;
-		@include breakpoint(mobile) {
+		font-size: 1.5em;
+		@include respond-to(mobile) {
 			top:0px;
 		}
 	}
@@ -61,38 +59,51 @@
 			display: inline-block;
 			width: 55%;
 	 		top:50px;
-	 		@include breakpoint(mobile) {
+	 		@include respond-to(mobile) {
 	 			width: 95%;
 	 		}
 		}
-		@include breakpoint(mobile) {
+		@include respond-to(mobile) {
 	 		height: 170%;
 	 	}
 	 	#slider-controls{
-	 		border: 1px solid #fff;
-	 		width: 50%;
+	 		
+	 		width: 52%;
+	 		margin-left: 40px;
+	 		padding-left: 0;
+	 		overflow: hidden;
 	 		li{
-	 			display: inline-block;
+	 			
+	 			display: inline;
+	 			float: left;
+	 			&:last-child{
+	 				float: right;
+	 			}
 	 			a{
 	 				display: block;
+	 				width: 40px;
+	 				font-size: 1.2em;
+	 				&.next{
+	 					text-align: right;
+	 				}
 	 			}
 	 		}
 
-
 	 	}
 	 	#imgFull{
-	 		height: 100%;
+	 		//height: 100%;
+	 		height: auto;
  			max-height: 600px;
  			overflow: hidden;
-
+			padding-top: 10px;
 			img{
-				@include breakpoint(mobile) {
+				@include respond-to(mobile) {
 			 		margin:0 auto;
 					width: 100%;
 		 		}
 			}
- 			@include breakpoint(mobile) {
-		 		max-height: 250px;
+ 			@include respond-to(mobile) {
+		 		max-height: 300px;
 		 		width: 95%;
 		 		margin:0 auto;
 		 	}
@@ -107,7 +118,7 @@
 	 	}
 		.expanded-info{
 	 		position: absolute;
-	 		top:45px;
+	 		top: 50px;//45px;
 	 		left: 60%;
 	 		right: 0;
 	 		width: 33%;
@@ -122,7 +133,12 @@
 	 		dt{
 	 			font-weight: 700;		
 	 			padding:2px;
-	 			color: lighten($portfolioColor, 15%);
+	 			color: lighten($portfolioColor, 20%);
+	 			&.team, &.desc, &.skills{
+	 				@include respond-to(mobile){
+	 					display: none;
+	 				}
+	 			}
 	 		}
 	 		dd{
 				margin-left: 1%;
@@ -130,10 +146,15 @@
 				margin-bottom: 5px;
 				font-weight: 300;
 				color: lighten($portfolioColor, 50%);
+				&.team, &.desc, &.skills{
+	 				@include respond-to(mobile){
+	 					display: none;
+	 				}
+	 			}
 	 		}
-			@include breakpoint(mobile) {
+			@include respond-to(mobile) {
 		 		left: 0%;
-		 		top:42%;
+		 		top:60%;
 		 		width: 100%;
 		 		dl{
 		 			overflow: hidden;
@@ -159,67 +180,36 @@
 		 			margin-left: 7px;
 		 		}
 		 	}
-		 	@include breakpoint(large-phone) {
-		 		left: 0%;
-		 		top:42%;
-		 		width: 100%;
-		 		dl{
-		 			overflow: hidden;
-		 			width: 95%;
-		 		}
-		 		dt, dd{
-		 			display: inline-block;
-		 			
-		 		}
-		 		dt{
-		 			clear: both;
-		 			float: left;
-		 			width: 25%;
-		 			text-align: right;
-		 			margin-right: 0px;
-		 			height: 44px;
-		 			
-		 		}
-		 		dd{
-		 			float:right;
-		 			width:65%;
-		 			text-align: left;
-		 			margin-left: 7px;
-		 		}
-		 	}
+		 	
 		}	
 	}
 	#g-scroll {
-		width: 100%;
+		max-width: 100%;
 		height: 100%;
+		overflow-x:scroll;
 	}
 	.galleryList{
 	
-		// margin: 0px auto 0 auto;
 		height: 100%;
 		// min-height: 720px;
+		
+		padding:0;
 		padding-top: 0px;
-		padding: 20px 2%;
 		position: relative;
-		// max-width: 1216px;
 		cursor: ew-resize;
 		overflow-x:scroll;
 		
-		@include breakpoint(mobile) {
+		@include respond-to(mobile) {
 			width: 100%;
 			padding: 5px 2%;
 		}
-		@include breakpoint(large-phone) {
-			width: 100%;
-			padding: 5px 2%;
-		}
+		
 		.grid-sizer{
-			// @include breakpoint(mobile) {
-			//  	width: 45.8%;
-			// }
-			// @include breakpoint(large-phone) {
-			//  	width: 45.8%;
-			// }
+			@include respond-to(mobile) {
+			 	//width: 50%;
+
+			}
+
 		}
 		li{
 			list-style-type: none;
@@ -227,22 +217,22 @@
 			position: absolute;
 			overflow: hidden;
 			margin: 0;
-			width: 300px;
-			height: 200px;
+			width: 400px;
+			height: 300px;
 
-			// @include breakpoint(mobile) {
-			// 	width: 45.8%;
-			// }
-			// @include breakpoint(large-phone) {
-			//  	width: 45.8%;
-			// }
+			&.item{
+				@include respond-to(mobile) {
+					width: 100%;
+					max-width:383.5px;
+				}	
+			}
 		 	.info{
 		 		font-size: 1.2em;
 		 		position: absolute;
 		 		right: 0;
 		 		left: 0;
 		 		bottom:0;
-		 		top:150px;
+		 		top:calc(100% - 30px);
 		 		text-align: center;
 		 		color:white;
 		 		background: transparentize(black, 0.2);

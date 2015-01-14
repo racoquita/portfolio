@@ -48,7 +48,7 @@
 			&:hover {
 				cursor: context-menu;
 				&:after {
-					content:'Cat Lover';
+					content:'cat lover';
 					font-size: 0.5em;
 					position: absolute;
 					width: 160px;
@@ -70,6 +70,20 @@
 			.icon {
 				display: block;
 			}
+			&.animated{
+				-webkit-animation-duration: 1s;
+				animation-duration: 1s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+				-webkit-animation-iteration-count: 2;
+				animation-iteration-count: 2;
+
+			}
+			&.bounce{
+				-webkit-animation-name: bounce;
+				animation-name: bounce;
+			}
+			
 		}
 		&.hidden {
 			display: none;
@@ -98,7 +112,14 @@
 	
 	text-align: center;
 	width: 5%;
-	
+	&.come-in{
+		-webkit-transform: translateY(150px);
+		-moz-transform: translateY(150px);
+		transform: translateY(150px);
+		-webkit-animation: come-in 2s ease forwards;
+		-moz-animation: come-in 2s ease forwards;
+		animation: come-in 2s ease forwards;
+	}
 	@include breakpoint(mobile) {
 		
 		margin: 0 auto;			
@@ -114,6 +135,10 @@
 			width: 100%;
 			font-size: 1.5em;
 			line-height: 44px;
+			color:lighten(white, 50%);
+			&:hover{
+				color:lighten(white, 0%);
+			}
 		}	
 	
 		@include breakpoint(mobile) {
@@ -140,4 +165,5 @@
 		width: 90%;
 		
 	}
+
 }

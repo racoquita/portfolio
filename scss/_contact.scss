@@ -6,14 +6,14 @@ $inputHeight:40px;
 	background-color: $contactColor;
 	font-size: 1rem;
 	::-webkit-input-placeholder {
-	   color: lighten($contactColor, 30%);  
+	   color: lighten($contactColor, 50%);  
 	   font-size: 1em;
 	   text-transform: uppercase;
 	   margin: 5px;
 	   font-family: 'brandon-grotesque';
 	}
 	:-moz-placeholder { /* Firefox 18- */
-	   color: lighten($contactColor, 10%);  
+	   color: lighten($contactColor, 15%);  
 	}
 
 	::-moz-placeholder {  /* Firefox 19+ */
@@ -40,7 +40,8 @@ $inputHeight:40px;
 			line-height: $inputHeight;
 			//text-transform: uppercase;
 			margin-right: 1%;
-			color: darken($contactColor, 10%);
+			color:black;
+			//color: lighten($aboutColor, 20%);
 		}
 		input, textarea {
 			-webkit-appearance: none;
@@ -50,11 +51,15 @@ $inputHeight:40px;
 			padding-left:15px;
 			width: 40%;
 			//background: lighten($contactColor , 5%);
-			
-			background: lighten($contactColor , 4%);
+			background: lighten($contactColor , 2%);
 			border-radius: 2px;
 			color:white;
-			border-top:1px solid darken($contactColor, 2%);
+			border-bottom:1px solid lighten($contactColor, 20%);
+			&:focus{
+				color: $aboutColor;
+				outline: $aboutColor;
+				background: lighten($contactColor, 10%);
+			}
 			
 		}
 		textarea{
@@ -71,9 +76,16 @@ $inputHeight:40px;
 
 		}
 		input[type="submit"] {
-			background-color: $aboutColor;
+			border: 2px solid $aboutColor;
 			text-transform: uppercase;
 			font-weight: 700;
+			color:$aboutColor;
+			&:hover{
+				border: 2px solid $portfolioColor;
+				background: $aboutColor;
+				color:white;
+				cursor: pointer;
+			}
 		}
 	}
 	form {

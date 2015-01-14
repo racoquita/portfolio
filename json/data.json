@@ -32,7 +32,10 @@
         "year": "2010",
         "images": [
             {
-                "image":"allaboutdesign_industry800x600.jpg"
+                "image":"http://placehold.it/800x600"
+            },
+            {
+                "image":"http://placehold.it/800x600"
             }
         ]
 	},
@@ -89,7 +92,10 @@
         "year": "2012",
         "images": [
             {
-                "image":"sct-redesigned.png"
+                "image":"img/sct-redesigned.png"
+            },
+            {
+                "image":"http://placehold.it/800x600"
             }
         ]
 	},
@@ -136,7 +142,10 @@
         "year": "2010",
         "images": [
             {
-                "image":"mechanicalObj_800x600.jpg"
+                "image":"img/mechanicalObj_800x600.jpg"
+            },
+            {
+                "image":"img/mechanicalObj_800x600.jpg"
             }
             
         ]
@@ -171,8 +180,11 @@
 		"year": "2013",
 		"images":[
 			{
-				"image": "13PS_logo_bw.jpg"
-			}
+				"image": "img/13PS_logo_bw.jpg"
+			},
+            {
+                "image": "http://placehold.it/800x600"
+            }
 		]
 	},
 	"sstm": {
@@ -211,7 +223,10 @@
         
         "images": [
             {
-                "image":"spectrum.png"
+                "image":"img/spectrum.png"
+            },
+            {
+                "image": "http://placehold.it/800x600"
             }
         ]
 	},
@@ -262,10 +277,13 @@
 		"year": "2012",
 		"images":[
 			{
-				"image": "anb_index800x600.jpg"
+				"image": "img/anb_index800x600.jpg"
 			},
             {
-                "image": "birth-of-a-galaxy-800x600.jpg"
+                "image": "img/birth-of-a-galaxy-800x600.jpg"
+            },
+            {
+                "image": "http://placehold.it/800x600"
             }
 
 		]
@@ -306,10 +324,54 @@
         "year": "2012",
         "images":[
             {
-                "image": "allaboutdesign_industry800x600.jpg"
+                "image": "http://placehold.it/800x600"
             },
             {
-                "image": "allaboutdesign_industry800x600.jpg"
+                "image": "http://placehold.it/800x600"
+            }
+
+        ]
+    },
+    "pp":{
+        "name": "Project Project",
+        "category": "Web Development",
+        "type": "web",
+        "platform": "Web",
+        "icon": "&#xe002;",
+        "link": "#",
+        "description": "kdlsjflsdlfwantedt with Petfinder where they had listed the information",
+        "skills": [
+            {
+                "skill": "Use of APIs"
+            },
+            {
+                "skill": "Backbone.js"
+            }
+            
+        ],
+        "role": [
+            { 
+                "role":"Front-end Developer"
+            }
+        ],
+        "team": [
+            {
+                "member": "Carolina Yibirin-Stovall",
+                "role" : "Lead Front-end Developer"
+
+            },
+            {
+                "member": "Richard Stovall",
+                "role": "Lead Designer"
+            }
+        ],
+        "year": "2012",
+        "images":[
+            {
+                "image": "http://placehold.it/800x600"
+            },
+            {
+                "image": "http://placehold.it/800x600"
             }
 
         ]

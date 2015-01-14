@@ -30,7 +30,7 @@ function program1(depth0,data) {
 function program3(depth0,data) {
   
   var buffer = "", stack1, helper;
-  buffer += "\n         <dd>";
+  buffer += "\n    <dd class=\"skills\">";
   if (helper = helpers.skill) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.skill); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
@@ -41,7 +41,7 @@ function program3(depth0,data) {
 function program5(depth0,data) {
   
   var buffer = "", stack1, helper;
-  buffer += "\n         <dd>";
+  buffer += "\n        <dd>";
   if (helper = helpers.role) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.role); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
@@ -52,7 +52,7 @@ function program5(depth0,data) {
 function program7(depth0,data) {
   
   var buffer = "", stack1, helper;
-  buffer += "\n         <dd>";
+  buffer += "\n    <dd class=\"team\" >";
   if (helper = helpers.member) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.member); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
@@ -60,33 +60,33 @@ function program7(depth0,data) {
   if (helper = helpers.role) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.role); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
-    + "</em></dd>\n        \n    ";
+    + "</em></dd>\n    ";
   return buffer;
   }
 
-  buffer += "<figure id=\"imgFull\">\n    <img src=\"img/"
+  buffer += "<figure id=\"imgFull\">\n    <img src=\""
     + escapeExpression(((stack1 = ((stack1 = ((stack1 = (depth0 && depth0.images)),stack1 == null || stack1 === false ? stack1 : stack1[0])),stack1 == null || stack1 === false ? stack1 : stack1.image)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "\" alt=\"\"/>\n\n   ";
   stack1 = helpers['if'].call(depth0, (depth0 && depth0.caption), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n</figure>\n\n<ul id=\"slider-controls\">\n\n    <li><a href=\"#\" class=\"prev\">Previous</a></li>\n    <li><a href=\"#\" class=\"next\">Next</a></li>\n</ul>\n\n<div class=\"expanded-info\">\n<dl>\n    <dt>Category</dt>\n    <dd><span class=\"icon\"></span> "
+  buffer += "\n</figure>\n\n<ul id=\"slider-controls\">\n\n    <li><a href=\"#\" title=\"previous picture\" class=\"prev icon icon-prev\"></a></li>\n    <li><a href=\"#\" title=\"next picture\" class=\"next icon icon-next\"></a></li>\n</ul>\n\n<div class=\"expanded-info\">\n<dl>\n    <dt>Category</dt>\n    <dd><span class=\"icon\"></span> "
     + escapeExpression(((stack1 = (depth0 && depth0.category)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</dd>\n    <dd>"
     + escapeExpression(((stack1 = (depth0 && depth0.platform)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</dd> \n\n    <dt>Project Name</dt>\n    <dd>"
+    + "</dd> \n\n    <dt>Project</dt>\n    <dd>"
     + escapeExpression(((stack1 = (depth0 && depth0.name)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</dd>       \n    \n    <dt>Skills</dt>\n    ";
+    + "</dd>       \n    \n    <dt class=\"skills\">Skills</dt>\n    ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.skills), {hash:{},inverse:self.noop,fn:self.program(3, program3, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n    \n    \n    <dt>Roles</dt>\n    ";
+  buffer += "\n\n    <dt>Role</dt>\n    ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.role), {hash:{},inverse:self.noop,fn:self.program(5, program5, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n\n    <dt>Team</dt>\n    ";
+  buffer += "\n\n    <dt class=\"team\">Team</dt>\n    ";
   stack1 = helpers.each.call(depth0, (depth0 && depth0.team), {hash:{},inverse:self.noop,fn:self.program(7, program7, data),data:data});
   if(stack1 || stack1 === 0) { buffer += stack1; }
   buffer += "\n\n    <dt>Year</dt>\n    <dd>"
     + escapeExpression(((stack1 = (depth0 && depth0.year)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
-    + "</dd>\n\n    <dt>Description</dt>\n    <dd>"
+    + "</dd>\n\n    <dt class=\"desc\">Description</dt>\n    <dd class=\"desc\">"
     + escapeExpression(((stack1 = (depth0 && depth0.description)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
     + "</dd>\n</dl>\n</div>\n";
   return buffer;

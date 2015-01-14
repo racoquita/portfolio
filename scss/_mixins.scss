@@ -1,3 +1,5 @@
+$devices:  mobile 0px 767px,  tablet 768px 960px, desktop 961px 1600px;
+
 @mixin addShadow(){
  	   -moz-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
   	-webkit-box-shadow: 0px 4px 5px #666, 2px 6px 10px #999;
@@ -7,6 +9,16 @@
      @each $prefix in -webkit-, -moz-, -ms-, -o-, '' {
           #{$prefix}#{$property}: $value;
      }
+}
+@mixin respond-to($respond-to) {
+	@each $device in $devices {
+		@if nth($device, 1) == $respond-to {
+	
+			@media screen and (min-width: nth($device, 2)) and ( max-width: nth($device, 3)) {
+				@content;
+			}
+		}
+	}
 }
 @mixin breakpoint($point) {
 	@if $point == mobile {
@@ -25,7 +37,7 @@
 		@media screen and (min-width : 1200px) { @content; }
 	}
 }
-$devices: mobile 260px 479px 0px, large-phone 383px 767px 30px, tablet 400px 959px 50px;
+//$devices: mobile 260px 479px 0px, large-phone 383px 767px 30px, tablet 400px 959px 50px;
 @mixin respondGallery($d) {
 	@each $device in $devices{
 		@if nth($device, 1) == $d {

@@ -1,5 +1,5 @@
 <figure id="imgFull">
-    <img src="img/{{images.0.image}}" alt=""/>
+    <img src="{{images.0.image}}" alt=""/>
 
    {{#if caption}}
          <figcaption>{{caption}}</figcaption>
@@ -8,8 +8,8 @@
 
 <ul id="slider-controls">
 
-    <li><a href="#" class="prev">Previous</a></li>
-    <li><a href="#" class="next">Next</a></li>
+    <li><a href="#" title="previous picture" class="prev icon icon-prev"></a></li>
+    <li><a href="#" title="next picture" class="next icon icon-next"></a></li>
 </ul>
 
 <div class="expanded-info">
@@ -18,30 +18,28 @@
     <dd><span class="icon"></span> {{this.category}}</dd>
     <dd>{{this.platform}}</dd> 
 
-    <dt>Project Name</dt>
+    <dt>Project</dt>
     <dd>{{this.name}}</dd>       
     
-    <dt>Skills</dt>
+    <dt class="skills">Skills</dt>
     {{#each this.skills}}
-         <dd>{{skill}}</dd>
-    {{/each}}
-    
-    
-    <dt>Roles</dt>
-    {{#each this.role}}
-         <dd>{{role}}</dd>
+    <dd class="skills">{{skill}}</dd>
     {{/each}}
 
-    <dt>Team</dt>
+    <dt>Role</dt>
+    {{#each this.role}}
+        <dd>{{role}}</dd>
+    {{/each}}
+
+    <dt class="team">Team</dt>
     {{#each this.team}}
-         <dd>{{member}} - <em>{{role}}</em></dd>
-        
+    <dd class="team" >{{member}} - <em>{{role}}</em></dd>
     {{/each}}
 
     <dt>Year</dt>
     <dd>{{this.year}}</dd>
 
-    <dt>Description</dt>
-    <dd>{{this.description}}</dd>
+    <dt class="desc">Description</dt>
+    <dd class="desc">{{this.description}}</dd>
 </dl>
 </div>

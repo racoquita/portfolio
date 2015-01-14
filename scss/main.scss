@@ -64,6 +64,10 @@ a {
 	&.active {
 		color: $yellowMustard;
 	}
+	&:hover{
+		color:$aboutColor;
+		border-bottom: 1px solid $aboutColor;
+	}
 }
 p, li {
 	margin: 0;
