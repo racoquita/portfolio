@@ -4,6 +4,9 @@ $inputHeight:40px;
 
 #contact {
 	background-color: $contactColor;
+	// background: $contactColor url('../img/IMG_5323.JPG') 0 0 no-repeat;
+	// background-size: cover;
+	
 	font-size: 1rem;
 	::-webkit-input-placeholder {
 	   color: lighten($contactColor, 50%);  

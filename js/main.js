@@ -33,7 +33,7 @@ $(document).ready(function(){
 	$sm = $('#sm');
 
 	initScroller();
-	initGalleryScroll();
+	//initGalleryScroll();
 	handleNav();
 	onItemHover();
 	itemClickHandler();
@@ -66,7 +66,8 @@ function initScroller() {
 		scrollX: false,
 		scrollY: true,
 		probeType: 3,
-		mouseWheel: true
+		mouseWheel: true,
+		momentum:true
 	});
 
 
@@ -176,6 +177,7 @@ function itemClickHandler () {
 		var selected = selLi.find('.contain').data('name');	
 
 		$('header a[data-scroll="portfolio"]').trigger('click');
+		
 		clone.addClass('clone').css({
 			top: selLi.position().top,
 			left:selLi.position().left,

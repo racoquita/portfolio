@@ -63,9 +63,7 @@
 	 			width: 95%;
 	 		}
 		}
-		@include respond-to(mobile) {
-	 		height: 170%;
-	 	}
+		
 	 	#slider-controls{
 	 		
 	 		width: 52%;
@@ -82,18 +80,23 @@
 	 			a{
 	 				display: block;
 	 				width: 40px;
+	 				height: 40px;
+	 				line-height: 40px;
 	 				font-size: 1.2em;
 	 				&.next{
 	 					text-align: right;
 	 				}
 	 			}
 	 		}
+	 		@include respond-to(mobile){
+	 			width: 95%;
+	 		}
 
 	 	}
 	 	#imgFull{
 	 		//height: 100%;
 	 		height: auto;
- 			max-height: 600px;
+ 			min-height: 600px;
  			overflow: hidden;
 			padding-top: 10px;
 			img{
@@ -103,7 +106,7 @@
 		 		}
 			}
  			@include respond-to(mobile) {
-		 		max-height: 300px;
+		 		max-height: 350px;
 		 		width: 95%;
 		 		margin:0 auto;
 		 	}
@@ -159,10 +162,11 @@
 		 		dl{
 		 			overflow: hidden;
 		 			width: 95%;
+		 			margin: 0 auto;
 		 		}
 		 		dt, dd{
 		 			display: inline-block;
-		 			
+
 		 		}
 		 		dt{
 		 			clear: both;
@@ -172,6 +176,9 @@
 		 			margin-right: 0px;
 		 			height: 44px;
 		 			
+	 				border-top: 1px solid lighten( $portfolioColor, 20%);
+
+	 				
 		 		}
 		 		dd{
 		 			float:right;
@@ -232,9 +239,9 @@
 		 		right: 0;
 		 		left: 0;
 		 		bottom:0;
-		 		top:calc(100% - 30px);
+		 		top:calc(100% - 50px);
 		 		text-align: center;
-		 		color:white;
+		 		color:lighten(black, 40%);
 		 		background: transparentize(black, 0.2);
 		 		z-index: 0;
 		 		-webkit-transition: all 1s ease;
@@ -244,9 +251,37 @@
 		 		transition: all 1s ease;
 		 		dl{
 		 			//padding-top: 25%;
+		 			@include prefix(transition, all .5s);
+		 			dt{
+		 				font-size: 1.5em;
+		 				.icon{
+	 						font-size: 1.5em;
+	 						
+	 					}
+		 			}
+		 			dd{
+		 				
+		 				font-size: 1.5em;
+
+		 			}
 		 		}
 		 		&.show{
 		 			top:0;
+		 			color:lighten(black, 90%);
+		 			dl{
+		 				padding-top: 20%;
+		 				dt{
+		 					.icon{
+		 						font-size: 2em;
+		 						margin-bottom: 0;
+		 					}
+			 				
+			 			}
+		 				
+		 			}
+		 			@include respond-to(mobile) {
+						display: none;
+		 			}
 		 		}
 		 	}
 		 	img{
