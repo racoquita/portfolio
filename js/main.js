@@ -31,6 +31,7 @@ $(document).ready(function(){
 	$portfolio =  $('#portfolio');
 	$gallery = $('#gallery');
 	$about = $('#about');
+	$blog = $('#blog');
 	$sm = $('#sm');
 
 
@@ -65,9 +66,10 @@ function init () {
 	initPackery();
 }
 function initScroller() {
-	$('#scroll, ul.wrapper li#about, #scroll, ul.wrapper li#about').height($(window).height());
-	$('.wrapper').height($('#scroll, ul.wrapper li#about').height() + $('#scroll, ul.wrapper li#contact').height() + $('#scroll, ul.wrapper li#portfolio').css('height'));
-
+	$('#scroll, ul.wrapper li#about, ul.wrapper li#contact, ul.wrapper li#blog').height($(window).height());
+	$('.wrapper').height($('ul.wrapper li#about').height() + $('#scroll, ul.wrapper li#contact').height() + $('#scroll ul.wrapper li#portfolio').css('height')  );
+	console.log( $('ul.wrapper li#about').height() + $('ul.wrapper li#contact').height() + $('#scroll ul.wrapper li#portfolio').css('height') + $('ul.wrapper li#blog').css('height'))
+	
 	scroller = new IScroll('#scroll', {
 		scrollX: false,
 		scrollY: true,
@@ -106,11 +108,12 @@ function initScroller() {
 
 function handleNav() {
 	$('header a').on('click', function(e){
+
 		e.preventDefault();
 		fromClick = true;
 
 		var target = $(e.currentTarget).data('scroll');
-
+		console.log(target)
 		if(typeof scroller != 'undefined') {
 			scroller.scrollToElement('#' + target, 500);
 
