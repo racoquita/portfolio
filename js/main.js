@@ -78,10 +78,10 @@ function init () {
 }
 
 function initScroller() {
-	$('#scroll, ul.wrapper li#about, ul.wrapper li#contact, ul.wrapper li#blog').height($(window).height());
-	$('.wrapper').height($('ul.wrapper li#about').height() + $('#scroll, ul.wrapper li#contact').height() + $('#scroll ul.wrapper li#portfolio').css('height')  );
+	$('#scroll, ul.wrapper li#about, ul.wrapper li#contact, ul.wrapper li#blog, ul.wrapper li#portfolio').height($(window).height());
+	$('.wrapper').height($('li#about').height() + $('li#contact').height() + $('li#portfolio').height()+  $('li#blog').height() );
 	//console.log( $('ul.wrapper li#about').height() + $('ul.wrapper li#contact').height() + $('#scroll ul.wrapper li#portfolio').css('height') + $('ul.wrapper li#blog').css('height'))
-	
+	console.log($('li#about').height() + $('li#contact').height() + $('li#portfolio').height()+  $('li#blog').height() )
 
 	scroller = new IScroll('#scroll', {
 		scrollX: false,

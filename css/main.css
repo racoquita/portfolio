@@ -331,7 +331,7 @@ header.hide { top: -50px; }
 #portfolio .galleryList li:hover { cursor: pointer; }
 #portfolio .galleryList li:hover img { -webkit-filter: blur(5px); filter: blur(20px); }
 
-#blog { background-color: #37948B; }
+#blog { background-color: #37948B; height: auto; }
 
 body { position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: 0; overflow: hidden; font-family: 'brandon-grotesque', arial, helvetica, sans-serif; font-size: 62.5%; font-weight: 300; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
