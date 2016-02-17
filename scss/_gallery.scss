@@ -1,6 +1,6 @@
 #portfolio {
 	background-color: $portfolioColor;
-
+	height: auto;
 	@include respond-to(mobile) {
 	 	//height: 170%; 
 	}
@@ -190,49 +190,67 @@
 		 	
 		}	
 	}
-	#g-scroll {
+	
+	#gallery{
+		width: 100%;
 		max-width: 100%;
-		height: 100%;
-		overflow-x:scroll;
+		&:after{
+			
+			content: ' ';
+			display: block;
+			clear: both;
+		}
 	}
 	.galleryList{
 	
 		height: 100%;
-		// min-height: 720px;
-		
 		padding:0;
 		padding-top: 0px;
 		position: relative;
-		cursor: ew-resize;
-		overflow-x:scroll;
-		
+
 		@include respond-to(mobile) {
 			width: 100%;
 			padding: 5px 2%;
 		}
 		
-		.grid-sizer{
-			@include respond-to(mobile) {
-			 	//width: 50%;
-
-			}
-
-		}
+		
 		li{
 			list-style-type: none;
 			display: inline-block;
 			position: absolute;
 			overflow: hidden;
 			margin: 0;
-			width: 400px;
-			height: 300px;
+			// width: 400px;
+			// height: 300px;
+		
+			&.item, &.grid-sizer{
+				width: 20%;
 
-			&.item{
+				height: 160px;
+				overflow: hidden;
+				float: left;
 				@include respond-to(mobile) {
-					width: 100%;
-					max-width:383.5px;
+					width: 50%;
+					
 				}	
+				@include respond-to(tablet) {
+					width: 40%;
+					max-width:383.5px;
+				}
+				&.w2{
+					width: 40%;
+				}
+				&.w4{
+					width: 80%;
+				}
+				&.h2{
+					height: 320px;
+				}
+				&.h4{
+					height: 480px;
+				}
 			}
+			
 		 	.info{
 		 		font-size: 1.2em;
 		 		position: absolute;
@@ -242,20 +260,22 @@
 		 		top:calc(100% - 50px);
 		 		text-align: center;
 		 		color:lighten(black, 40%);
-		 		background: transparentize(black, 0.2);
+		 		background: transparentize(white, 0.6);
 		 		z-index: 0;
-		 		-webkit-transition: all 1s ease;
-		 		-moz-transition: all 1s ease;
-		 		-ms-transition: all 1s ease;
-		 		-o-transition: all 1s ease;
-		 		transition: all 1s ease;
+		 		
+		 		@include prefix(transition, all .3s ease-in-out);
 		 		dl{
 		 			//padding-top: 25%;
-		 			@include prefix(transition, all .5s);
+		 			@include prefix(transition, all .3s);
 		 			dt{
-		 				font-size: 1.5em;
+		 				font-size: 1em;
+		 				color: white;
 		 				.icon{
-	 						font-size: 1.5em;
+	 						font-size: 1em;
+	 						color:white;
+	 						margin-bottom: 20px;
+
+
 	 						
 	 					}
 		 			}
@@ -267,6 +287,7 @@
 		 		}
 		 		&.show{
 		 			top:0;
+		 			background: transparentize(black, 0.5);
 		 			color:lighten(black, 90%);
 		 			dl{
 		 				padding-top: 20%;

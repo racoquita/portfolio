@@ -1,3 +1,4 @@
+@import 'anim';
 #about {
 	top:0;
 	bottom:0;
@@ -5,56 +6,79 @@
 	background-color: $aboutColor;
 	margin: 0;
 	padding: 0;
+	.come-in{
+		-webkit-transform: translateY(150px);
+		-moz-transform: translateY(150px);
+		transform: translateY(150px);
+		
+		-webkit-animation: come-in 2s ease forwards;
+		-moz-animation: come-in 2s ease forwards;
+		animation: come-in 2s ease forwards;
+	}
+	h1, h3, .pron, .introduction{
+		width: 70%;
+		color:white;
+		font-weight: normal;
+		text-align: center;
 
+	}
 	h3 {
 		text-align: left;
-		color:white;
 		margin-top: 0;
 		padding-top: 0;
 		font-size: 3.6em;
-		font-weight: normal;
 		padding-left: 2%;
 		padding-right: 2%;
-		width: 70%;
 	}
 	h1 {
-		color:white;
-		width: 70%;
 		margin: 0 auto;
 		padding-top: 50px;
-		
-		span {
-			display: block;
-			font-weight: 100;
-		}
+		text-transform: uppercase;
+		letter-spacing: 0.084em;
+		font-size: 5em;
+		line-height: 1em;
+		font-weight: 100;
 		@include breakpoint(mobile) {
-			font-size: 1.5em;
+			font-size: 4.5em;
+			text-align: middle;
 			width: 90%;
 		}
 		@include breakpoint(large-phone) {
-			font-size: 1.2em;
+			//font-size: 1.2em;
 			
 		}
 	}
-	
+	.pron{
+		
+		font-family: 'brandon-grotesque', arial, helvetica, sans-serif;
+		
+		color: transparentize(white, 0.5);
+		font-size: 1.5em;
+		margin:0 auto 30px auto;
+		&:after{
+			content:'';
+			border-right: 1px solid transparentize(white, 0.5);;
+		}
+		&:before{
+			content:'';
+			border-left: 1px solid transparentize(white, 0.5);;
+		}
+	}
 	.introduction {
-		text-align: left;
 		font-size: 2.8em;
-		color:white;
-		width: 70%;
 		margin: 0 auto;
 		.def {
 			position: relative;
 			&:hover {
 				cursor: context-menu;
 				&:after {
-					content:'cat lover';
+					content:'Cat Lover';
 					font-size: 0.5em;
 					position: absolute;
 					width: 160px;
-					padding-left:10px;
+					padding-left:15px;
 					height:30px;
-					background: $portfolioColor;
+					background: $aboutColor;
 				}
 			}
 		}
@@ -62,7 +86,7 @@
 			margin: 0 auto;
 			text-align: center;
 			position: fixed;
-			top:30%;
+			top:600px;
 			width: 100%;
 			font-size: 1.2em;
 			z-index: 8;
@@ -112,14 +136,7 @@
 	
 	text-align: center;
 	width: 5%;
-	&.come-in{
-		-webkit-transform: translateY(150px);
-		-moz-transform: translateY(150px);
-		transform: translateY(150px);
-		-webkit-animation: come-in 2s ease forwards;
-		-moz-animation: come-in 2s ease forwards;
-		animation: come-in 2s ease forwards;
-	}
+	
 	@include breakpoint(mobile) {
 		
 		margin: 0 auto;			

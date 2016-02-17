@@ -27,10 +27,12 @@ var $sm;
 
 $(document).ready(function(){
 	galleryItem = $('#gallery li');
+	galleryItemh2 = $('#gallery li.h2');
 	$portfolio =  $('#portfolio');
 	$gallery = $('#gallery');
 	$about = $('#about');
 	$sm = $('#sm');
+
 
 	initScroller();
 	//initGalleryScroll();
@@ -43,24 +45,28 @@ $(document).ready(function(){
 
 var initPackery = function () {	 
 	galleryItem.css({
-		height: $(window).innerHeight() / 2+"px"
+		height: $(window).innerHeight() / 3+"px"
+	});
+	galleryItemh2.css({
+		height: ($(window).innerHeight() / 3 * 2) + "px"
 	})
 	$gallery.packery({
-		columnWidth: '.item',
-		isHorizontal: true,
+		columnWidth: '.grid-sizer',
+		isHorizontal: false,
 		gutter:0,
-		isResizeBound: false,
+		isResizeBound: true,
 		itemSelector: '.item'
 	});
 }
 function init () {
 	$sm.addClass('come-in');
-	$('.introduction.scroll-signifier').addClass('animated').addClass('bounce');
+	$('.introduction.scroll-signifier').css({top: $(window).innerHeight() - 50+"px" }).addClass('animated').addClass('bounce');
+	$('h1, .pron, .introduction').addClass('come-in');
 	initPackery();
 }
 function initScroller() {
-	$('#scroll, ul.wrapper li.bg').height($(window).height());
-	$('.wrapper').height($(window).height() * 3);
+	$('#scroll, ul.wrapper li#about, #scroll, ul.wrapper li#about').height($(window).height());
+	$('.wrapper').height($('#scroll, ul.wrapper li#about').height() + $('#scroll, ul.wrapper li#contact').height() + $('#scroll, ul.wrapper li#portfolio').css('height'));
 
 	scroller = new IScroll('#scroll', {
 		scrollX: false,

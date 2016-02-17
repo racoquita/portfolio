@@ -1,7 +1,5 @@
 $inputHeight:40px;
 
-
-
 #contact {
 	background-color: $contactColor;
 	// background: $contactColor url('../img/IMG_5323.JPG') 0 0 no-repeat;
@@ -41,10 +39,10 @@ $inputHeight:40px;
 			font-size: 1.2em;
 			height: $inputHeight;
 			line-height: $inputHeight;
-			//text-transform: uppercase;
+			
 			margin-right: 1%;
 			color:black;
-			//color: lighten($aboutColor, 20%);
+			
 		}
 		input, textarea {
 			-webkit-appearance: none;
@@ -61,7 +59,7 @@ $inputHeight:40px;
 			&:focus{
 				color: $aboutColor;
 				outline: $aboutColor;
-				background: lighten($contactColor, 10%);
+			
 			}
 			
 		}
@@ -84,7 +82,7 @@ $inputHeight:40px;
 			font-weight: 700;
 			color:$aboutColor;
 			&:hover{
-				border: 2px solid $portfolioColor;
+				border: 2px solid $aboutColor;
 				background: $aboutColor;
 				color:white;
 				cursor: pointer;

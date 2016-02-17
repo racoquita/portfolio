@@ -19,6 +19,8 @@ body {
 	font-family: 'brandon-grotesque', arial, helvetica, sans-serif;
 	font-size: 62.5%;
 	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 #scroll {
 	width: 100%;
@@ -29,7 +31,7 @@ ul.wrapper {
 	margin: 0;
 	padding: 0;
 	height: 100%;
-
+	
 	li.bg {
 		margin: 0;
 		padding: 0;
@@ -63,10 +65,11 @@ a {
 
 	&.active {
 		color: $yellowMustard;
+		//color:darken($portfolioColor, 40%);
 	}
 	&:hover{
-		color:$aboutColor;
-		border-bottom: 1px solid $aboutColor;
+		color:transparentize(white, 0.7);
+		//border-bottom: 1px solid white;
 	}
 }
 p, li {
