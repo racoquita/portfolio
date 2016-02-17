@@ -37,7 +37,13 @@
             {
                 "image":"http://placehold.it/800x600"
             }
-        ]
+        ],
+        "thumb" : {
+            "color" : "#cbc738",
+            "abbr": "allaboutdesign",
+            "icon": "icon-desktop",
+            "class": "grid-sizer"
+        }
 	},
 	"sct": {
 		"name": "Smart Cycle Tracker V2",
@@ -49,7 +55,7 @@
         "description": "SCT is a web application that allows women to track and log their fertility signs per monthly cycle. This image shows what the user sees once she's logged in",
         "skills": [
             {
-            	"skill": "Graphic Design"
+            	"skill": "UX Design"
             },
             {
             	"skill": "Adobe Photoshop"
@@ -61,7 +67,7 @@
             	"skill": "jQuery"
             },
             {
-            	"skill": "Illustration"
+                "skill": "CodeIgniter"
             },
             {
             	"skill": "Usability"
@@ -89,7 +95,7 @@
 				"role": "Lead back-end developer"
 			}
 		],
-        "year": "2012",
+        "year": "2014",
         "images": [
             {
                 "image":"img/sct-redesigned.png"
@@ -97,7 +103,13 @@
             {
                 "image":"http://placehold.it/800x600"
             }
-        ]
+        ], 
+        "thumb" : {
+            "color" : "#FF5722",
+            "abbr": "sct",
+            "icon": "&#xe000; &#xe001; &#xe002;",
+            "class": "item"
+        }
 	},
 	"gg":{
 		"name": "Galaxy Grabber Layout",
@@ -185,7 +197,12 @@
             {
                 "image": "http://placehold.it/800x600"
             }
-		]
+		],
+        "thumb" : {
+            "color" : "#9C27B0",
+            "abbr": "ps",
+            "icon": "icon-lamp"
+        }
 	},
 	"sstm": {
 		"name": "Spectrum SST Mexico",
@@ -228,7 +245,12 @@
             {
                 "image": "http://placehold.it/800x600"
             }
-        ]
+        ],
+        "thumb" : {
+            "color" : "#9C27B0",
+            "abbr": "sstm",
+            "icon": "icon-lamp"
+        }
 	},
 	"anb":{
 		"name": "A New Beginning Inc",
@@ -240,7 +262,7 @@
 		"description": "A New Beginning Pet Rescue, Inc. is a pet rescue organization located in Orlando, Fl. The client wanted a site that allowed users to look at the pets up for adoption. They already had an account with Petfinder where they had listed the information",
 		"skills": [
 			{
-            	"skill": "Use of APIs"
+            	"skill": "APIs"
             },
             {
             	"skill": "Backbone.js"
@@ -280,13 +302,18 @@
 				"image": "img/anb_index800x600.jpg"
 			},
             {
-                "image": "img/birth-of-a-galaxy-800x600.jpg"
+                "image": "http://placehold.it/800x600"
             },
             {
                 "image": "http://placehold.it/800x600"
             }
 
-		]
+		],
+        "thumb" : {
+            "color" : "#9C27B0",
+            "abbr": "anb",
+            "icon": "icon-lamp"
+        }
 	},
     "ap":{
         "name": "Another Project",

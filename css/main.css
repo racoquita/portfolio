@@ -306,7 +306,7 @@ header.hide { top: -50px; }
 @media screen and (min-width: 0px) and (max-width: 767px) { #portfolio .clone.full .expanded-info { left: 0%; top: 60%; width: 100%; }
   #portfolio .clone.full .expanded-info dl { overflow: hidden; width: 95%; margin: 0 auto; }
   #portfolio .clone.full .expanded-info dt, #portfolio .clone.full .expanded-info dd { display: inline-block; }
-  #portfolio .clone.full .expanded-info dt { clear: both; float: left; width: 25%; text-align: right; margin-right: 0px; height: 44px; border-top: 1px solid #333333; }
+  #portfolio .clone.full .expanded-info dt { clear: both; float: left; width: 25%; text-align: right; margin-right: 0px; height: 44px; }
   #portfolio .clone.full .expanded-info dd { float: right; width: 65%; text-align: left; margin-left: 7px; } }
 #portfolio #gallery { width: 100%; max-width: 100%; }
 #portfolio #gallery:after { content: ' '; display: block; clear: both; }

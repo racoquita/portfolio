@@ -23,6 +23,7 @@ var works = getPortfolioData();
 var $portfolio;
 var $gallery;
 var $about;
+var $blog;
 var $sm;
 
 $(document).ready(function(){
@@ -34,17 +35,23 @@ $(document).ready(function(){
 	$blog = $('#blog');
 	$sm = $('#sm');
 
+	
 
 	initScroller();
 	//initGalleryScroll();
 	handleNav();
+
 	onItemHover();
 	itemClickHandler();
 	
 	init();
+
+
+
 });
 
 var initPackery = function () {	 
+	
 	galleryItem.css({
 		height: $(window).innerHeight() / 3+"px"
 	});
@@ -63,13 +70,19 @@ function init () {
 	$sm.addClass('come-in');
 	$('.introduction.scroll-signifier').css({top: $(window).innerHeight() - 50+"px" }).addClass('animated').addClass('bounce');
 	$('h1, .pron, .introduction').addClass('come-in');
+	
+	
 	initPackery();
+
+
 }
+
 function initScroller() {
 	$('#scroll, ul.wrapper li#about, ul.wrapper li#contact, ul.wrapper li#blog').height($(window).height());
 	$('.wrapper').height($('ul.wrapper li#about').height() + $('#scroll, ul.wrapper li#contact').height() + $('#scroll ul.wrapper li#portfolio').css('height')  );
-	console.log( $('ul.wrapper li#about').height() + $('ul.wrapper li#contact').height() + $('#scroll ul.wrapper li#portfolio').css('height') + $('ul.wrapper li#blog').css('height'))
+	//console.log( $('ul.wrapper li#about').height() + $('ul.wrapper li#contact').height() + $('#scroll ul.wrapper li#portfolio').css('height') + $('ul.wrapper li#blog').css('height'))
 	
+
 	scroller = new IScroll('#scroll', {
 		scrollX: false,
 		scrollY: true,
@@ -107,13 +120,15 @@ function initScroller() {
 }
 
 function handleNav() {
+
 	$('header a').on('click', function(e){
 
 		e.preventDefault();
+
 		fromClick = true;
 
 		var target = $(e.currentTarget).data('scroll');
-		console.log(target)
+		
 		if(typeof scroller != 'undefined') {
 			scroller.scrollToElement('#' + target, 500);
 
@@ -137,25 +152,25 @@ function checkDir(y) {
 	}
 }
 
-function initGalleryScroll() {
-	g_scroller = new IScroll('#g-scroll', {
-		scrollX: true,
-		scrollY: false,
-		probeType: 3,
-		mouseWheel: true,
-		snap:true,
-		eventPassthrough:true
-	});
+// function initGalleryScroll() {
+// 	g_scroller = new IScroll('#g-scroll', {
+// 		scrollX: true,
+// 		scrollY: false,
+// 		probeType: 3,
+// 		mouseWheel: true,
+// 		snap:true,
+// 		eventPassthrough:true
+// 	});
 
 	// g_scroller.on('beforeScrollStart', function(){
 	// 	console.dir(g_scroller.options);
 	// 	console.log('before')
 	// });
-	g_scroller.on('scroll', function(){
-		console.dir(g_scroller.options);
-		console.log('scroll');
-	});
-}
+// 	g_scroller.on('scroll', function(){
+// 		console.dir(g_scroller.options);
+// 		console.log('scroll');
+// 	});
+// }
 function onItemHover () {
 	var info;
 	var img;
@@ -172,11 +187,26 @@ function onItemHover () {
 	});
 }
 function getPortfolioData () {
+	
+	
 	$.getJSON('json/data.json', function(res){
 		works = res;
+		//renderPortfolio();
 	});
 
-	return works;
+	//return works;
+}
+function renderPortfolio(){
+
+
+	$gallery.html(raco.categoryThumbs(works['ps']));
+	
+	$.each(works, function( index, value ) {
+	
+	  $gallery.append(raco.categoryThumbs(works[index]));
+	});
+	//console.log(works)
+	
 }
 function itemClickHandler () {
 	var clone = $('<div class="contain"></div>');
@@ -205,6 +235,7 @@ function appendWorkData(name) {
 	var data = works[name];
 	var closeLink = $('.close');
 	var to = [];
+
 	clone.html(raco.selectedWork(data));
 	
 	setTimeout(function() {

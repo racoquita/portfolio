@@ -3,12 +3,25 @@ this["raco"] = this["raco"] || {};
 this["raco"]["categoryThumbs"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
   this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var stack1, helper, functionType="function", escapeExpression=this.escapeExpression;
+  var buffer = "", stack1, helper, functionType="function", escapeExpression=this.escapeExpression;
 
 
-  if (helper = helpers.data) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.data); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  return escapeExpression(stack1);
+  buffer += "<li class=\"item \" style=\"background-color:"
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.thumb)),stack1 == null || stack1 === false ? stack1 : stack1.color)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + ";\">\n    <div class=\"contain\" data-name=\""
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.thumb)),stack1 == null || stack1 === false ? stack1 : stack1.abbr)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\">\n        <div class=\"info\"> ";
+  if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "\n            <dl>\n                \n                <dt> <span class=\"icon "
+    + escapeExpression(((stack1 = ((stack1 = (depth0 && depth0.thumb)),stack1 == null || stack1 === false ? stack1 : stack1.icon)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\"> </span></dt>\n                <dt>";
+  if (helper = helpers.name) { stack1 = helper.call(depth0, {hash:{},data:data}); }
+  else { helper = (depth0 && depth0.name); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
+  buffer += escapeExpression(stack1)
+    + "</dt>\n            \n            </dl>\n        </div>\n    </div>\n</li>";
+  return buffer;
   });
 
 this["raco"]["selectedWork"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
